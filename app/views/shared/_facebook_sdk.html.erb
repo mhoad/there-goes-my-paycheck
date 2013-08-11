@@ -1,0 +1,54 @@
+<script type="text/javascript">
+window.fbAsyncInit = function() {
+    // init the FB JS SDK
+    FB.init({
+      appId      : 'YOUR_APP_ID_GOES_HERE',              // App ID from the app dashboard
+      channelUrl : 'YOUR_CHANNEL_FILE_GOES_HERE',        // Channel file for x-domain comms
+      status     : true,                                 // Check Facebook Login status
+      xfbml      : true                                  // Look for social plugins on the page
+    });
+ 
+  //Likes the page
+  FB.Event.subscribe('edge.create', function(href, widget) {
+    ga('send', {
+              'hitType': 'social',
+              'socialNetwork': 'Facebook',
+              'socialAction': 'Like',
+              'socialTarget': '<%= request.base_url %>',
+              'page': '<%= request.original_fullpath %>'
+            });
+  });
+ 
+  //Unlikes the page
+  FB.Event.subscribe('edge.remove', function(href, widget) {
+    ga('send', {
+              'hitType': 'social',
+              'socialNetwork': 'Facebook',
+              'socialAction': 'Unlike',
+              'socialTarget': '<%= request.base_url %>',
+              'page': '<%= request.original_fullpath %>'
+            });
+  });
+ 
+  //Send or Share The Page
+  FB.Event.subscribe('message.send', function(href, widget) {
+    ga('send', {
+              'hitType': 'social',
+              'socialNetwork': 'Facebook',
+              'socialAction': 'Send',
+              'socialTarget': '<%= request.base_url %>',
+              'page': '<%= request.original_fullpath %>'
+            });
+  });
+ 
+  };
+ 
+  // Load the SDK asynchronously
+  (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1&#038;appId=FACEBOOK-APPLICATION-ID-GOES-HERE";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+</script>

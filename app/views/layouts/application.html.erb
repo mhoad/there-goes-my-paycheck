@@ -4,12 +4,19 @@
   <title>Paycheck</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= jquery_include_tag Rails.application.config.jquery_version %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body itemscope itemtype="http://schema.org/WebPage">
+<%= render "shared/facebook_sdk" %>
 
-<%= yield %>
-<%= jquery_include_tag Rails.application.config.jquery_version %>
+<div id="wrapper" class="col-12 col-sm-8 col-lg-8 col-offset-2" >
+  <%= render "shared/header" %>
+
+  <%= yield %>
+</div>
+<%= render "shared/footer" %>
+
 </body>
 </html>

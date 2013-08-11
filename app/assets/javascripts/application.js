@@ -14,4 +14,5 @@
 //= require turbolinks
 //= require bootstrap
 //= require jquery.sticky
+//= require social_tracking
 //= require_tree .
