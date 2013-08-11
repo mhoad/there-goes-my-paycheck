@@ -6,11 +6,13 @@ gem 'pg'
 
 group :development, :test do
   gem "rspec-rails", "~> 2.14.0"
+  gem "guard-rspec", "~> 3.0.2"
 end
 
 group :test do
   gem "selenium-webdriver", "~> 2.34.0"
   gem "capybara", "~> 2.1.0"
+  gem "growl", "~> 1.0.3"
 end
 
 gem 'sass-rails', '~> 4.0.0'
