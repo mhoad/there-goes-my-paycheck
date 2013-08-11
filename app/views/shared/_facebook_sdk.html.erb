@@ -40,6 +40,15 @@ window.fbAsyncInit = function() {
               'page': '<%= request.original_fullpath %>'
             });
   });
+
+  FB.getLoginStatus(function(response) {
+     if (response.status !== "unknown")
+     {
+      facebook_user(true);
+     }else{
+      facebook_user(false);
+     }
+    });
  
   };
  
