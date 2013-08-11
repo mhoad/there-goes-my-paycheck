@@ -9,5 +9,32 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
+ *= require bootstrap
+ *= require bootstrap-glyphicons
  *= require_tree .
  */
+
+#homepage-carosel{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#browse-items {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.product-row {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.product-snippet {
+  margin-top: 10px;
+}
+
+#social-menu {
+  margin-top: 300px;
+  margin-right: 20px;
+
+}
