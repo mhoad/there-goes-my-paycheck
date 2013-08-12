@@ -22,6 +22,7 @@ gem 'jquery-rails'
 gem 'jquery-rails-google-cdn'
 gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
+gem 'simple_form'
 
 group :doc do
   gem 'sdoc', '0.3.20', require: false
