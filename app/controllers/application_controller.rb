@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
   private
 
     def get_top_level_categories
-      @top_level_categories = Category.find(:all, :conditions => {:parent_id => nil } )  
+      @top_level_categories = Category.where(:parent_id => nil) 
     end
   
 end

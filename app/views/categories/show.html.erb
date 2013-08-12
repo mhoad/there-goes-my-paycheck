@@ -25,7 +25,12 @@
       <li class="active"><%= @category.name %></li>
     </ul>
     <section class="page-header">
-      <h1 itemprop="headline"><%= @category.name %> <small><%= link_to "Edit category", edit_category_path(@category) %></small></h1>
+      <h1 itemprop="headline"><%= @category.name %> 
+        <small>
+          <%= link_to "Edit category", edit_category_path(@category) %>
+          <%= link_to "Delete category", category_path(params[:id]), method: "delete" %>
+        </small>
+      </h1>
       <%= @category.description %>
     </section>
   </section>

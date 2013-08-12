@@ -1,13 +1,11 @@
 class CategoriesController < ApplicationController
   def index
-    @categories = Category.find(:all, :conditions => {:parent_id => nil } )
+    @categories = Category.where(:parent_id => nil) 
   end
 
   def show
-    # Find the category belonging to the given id
     @category = Category.find(params[:id])
-    # Grab all sub-categories
-    @categories = @category.subcategories
+    @categories = @category.subcategories # Grab all sub-categories
   end
 
   def new
@@ -18,7 +16,7 @@ class CategoriesController < ApplicationController
   def create
     @category = Category.new(category_params)
     if @category.save
-      flash[:success] = "Product sucessfully added"
+      flash[:success] = "Category sucessfully created"
       redirect_to @category
     else
       render 'new'
@@ -31,8 +29,13 @@ class CategoriesController < ApplicationController
 
   def update
     @category = Category.find(params[:id])
-    @category.update_attributes!(category_params)
-    redirect_to @category
+    @category.update_attributes(category_params)
+    if @category.save
+      flash[:success] = "Product sucessfully updated"
+      redirect_to @category
+    else
+      render 'edit'
+    end
   end
 
   def destroy
