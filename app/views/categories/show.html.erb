@@ -10,21 +10,15 @@
             <% end %>
           </ul>
         </li>
-       <li><a href="#"><strong>Geeky Stuff</strong></a></li>
-       <li><a href="#"><strong>Toys</strong></a></li>
-       <li><a href="#"><strong>Wearables</strong></a></li>
-       <li><a href="#"><strong>Home &amp; Office</strong></a></li>
-       <li><a href="#"><strong>Food &amp; Drink</strong></a></li>
-       <li><a href="#"><strong>Kid Stuff</strong></a></li>
-       <li><a href="#"><strong>Romantic Gifts</strong></a></li>
-       <li><a href="#"><strong>Gifts For Men</strong></a></li>
-       <li><a href="#"><strong>Gifts For Women</strong></a></li>
+        <% @top_level_categories.each do |category| %>
+          <li><%= link_to category.name, category_path(category) %></li>
+        <% end %>
       </ul>
     </div>
   </nav>
   <section itemprop="mainContentOfPage" class="col-9 col-sm-9 col-lg-9">
     <ul itemprop="breadcrumb" class="breadcrumb">
-      <li><span class="glyphicon glyphicon-home"></span><%= link_to "Home", root_path %></li>
+      <li><span class="glyphicon glyphicon-home"></span> <%= link_to "Home", root_path %></li>
       <% if !@category.parent_category.nil? %>              
         <li><a href="#"><%= link_to @category.parent_category.name, category_path(@category.parent_category) %></a></li>
       <% end %>
