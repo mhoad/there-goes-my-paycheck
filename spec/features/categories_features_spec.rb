@@ -3,6 +3,8 @@ require 'spec_helper'
 describe 'Categories' do
   subject { page }
   let(:submit) { 'Create Category' }
+  before { sign_in FactoryGirl.create(:admin_user) }
+
 
   describe 'new categories' do
     before { visit new_category_path }

@@ -12,8 +12,13 @@
         </a>
         <ul class="dropdown-menu">
           <li><a href="<%= about_path %>">About Us</a></li>
-          <li><a href="<%= submit_path %>" rel="nofollow">Submit Product</a></li>
+          <li><a href="<%= submit_path %>">Submit Product</a></li>
           <li><a href="<%= privacy_path %>">Privacy Policy</a></li>
+          <% if user_signed_in? %>
+            <li>
+            <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>        
+            </li>
+          <% end %>
         </ul>
       </li>
     </ul>

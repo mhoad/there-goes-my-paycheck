@@ -1,4 +1,6 @@
 class CategoriesController < ApplicationController
+  before_action :require_login, except:[:show, :index]
+
   def index
     @categories = Category.where(:parent_id => nil) 
   end
@@ -50,6 +52,13 @@ class CategoriesController < ApplicationController
     # can specialize this method with per-user checking of permissible attributes.
     def category_params
       params.require(:category).permit(:name, :description, :parent_id)
+    end
+
+    def require_login
+      unless user_signed_in? && current_user.admin?
+        flash[:error] = "You must be logged in to access this section"
+        redirect_to new_user_session_path # halts request cycle
+      end
     end
 
 end
