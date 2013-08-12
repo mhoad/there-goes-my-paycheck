@@ -46,7 +46,7 @@ class CategoriesController < ApplicationController
     # since you'll be able to reuse the same permit list between create and update. Also, you
     # can specialize this method with per-user checking of permissible attributes.
     def category_params
-      params.require(:category).permit(:name, :parent_id)
+      params.require(:category).permit(:name, :description, :parent_id)
     end
 
 end
