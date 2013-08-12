@@ -98,7 +98,45 @@ describe 'Categories' do
       click_link "Delete category"
     end
 
-     it { should have_content ("Category successfully deleted") }
+    it { should have_content ("Category successfully deleted") }
+  end
+
+  describe 'regular users' do
+    before { click_link "Logout" }
+
+    describe 'not able to create a new category' do
+      before { visit new_category_path }
+
+      it { should_not have_selector('h2', text: 'Add a new category')}
+      it { should_not have_field('category_name')}
+      it { should_not have_field('category_description')}
+      it { should_not have_field('category_parent_id')}
+    end
+
+    describe 'not able to edit a category' do
+      let(:category) { FactoryGirl.create(:category) }
+      before { visit edit_category_path(category) }
+
+      it { should_not have_content('Edit Category') }
+      it { should_not have_field('category_name') }
+      it { should_not have_field('category_description') }
+    end
+
+    describe 'not able to delete a category' do
+      let(:category) { FactoryGirl.create(:category) }
+      before { visit category_path(category) }
+
+      it { should_not have_link('Delete category') }
+    end
+
+    describe 'can view a category' do
+      let(:category) { FactoryGirl.create(:category) }
+      before { visit category_path(category) }
+
+      it { should have_content (category.name) }
+      it { should have_content (category.description) }
+    end
+
   end
 
 end
