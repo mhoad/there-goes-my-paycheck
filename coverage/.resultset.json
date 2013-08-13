@@ -224,10 +224,6 @@
         null,
         null,
         null,
-        1,
-        0,
-        null,
-        null,
         null
       ],
       "/Users/markhoad/code/rails/paycheck/app/controllers/application_controller.rb": [
@@ -279,6 +275,6 @@
         null
       ]
     },
-    "timestamp": 1376398911
+    "timestamp": 1376418161
   }
 }

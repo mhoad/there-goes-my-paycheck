@@ -33,6 +33,8 @@
                 <% category.subcategories.each do |sub_category| %>
                   <% if @category.name == sub_category.name %>
                     <li class="active"><a href="#"><%= sub_category.name %></a></li> 
+                    <% elsif sub_category.parent_id == @category.parent_id %>
+                      <li><%= link_to sub_category.name, category_path(sub_category) %></li>
                   <% end %>
                 <% end %>
               <% end %>
