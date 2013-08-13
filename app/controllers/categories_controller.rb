@@ -57,8 +57,4 @@ class CategoriesController < ApplicationController
       end
     end
 
-    def top_categories
-      Category.where(:parent_id => nil) 
-    end
-
 end
