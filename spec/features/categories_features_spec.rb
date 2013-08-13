@@ -31,7 +31,7 @@ describe 'Categories' do
         before { click_button submit }
 
         it { should have_content('Category sucessfully created')}
-        it { should have_selector('h1', text: 'Kids stuff') }
+        it { should have_selector('h3', text: 'Kids stuff') }
         it { should have_content('Lorem ipsum') }
       end
 
@@ -88,7 +88,7 @@ describe 'Categories' do
     let(:category) { FactoryGirl.create(:category) }
     before { visit category_path(category) }
   
-    it { should have_selector('h1', category.name) }
+    it { should have_selector('h3', category.name) }
   end
 
   describe 'delete category' do

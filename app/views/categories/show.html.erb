@@ -46,6 +46,9 @@
             <% end %>
             <li class="active"><%= @category.name %></li>
           </ul>
+          <% if user_signed_in? %>
+            <%= link_to('Delete category', category_path, :method => :delete) %>        
+          <% end %>
           <%= @category.description %>
         </div>      
         <div id="filter-bar" class="btn-group">
