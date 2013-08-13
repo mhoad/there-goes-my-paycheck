@@ -6,7 +6,7 @@ Paycheck::Application.routes.draw do
   get '/submit' => 'static_pages#submit'
   get '/privacy' => 'static_pages#privacy'
 
-  resources :categories
+  resources :categories, except: :index, :path => '/'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

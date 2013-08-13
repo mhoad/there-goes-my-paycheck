@@ -1,10 +1,6 @@
 class CategoriesController < ApplicationController
   before_action :require_login, except:[:show, :index]
 
-  def index
-    @categories = Category.where(:parent_id => nil) 
-  end
-
   def show
     @category = Category.find(params[:id])
     @categories = @category.subcategories # Grab all sub-categories
@@ -59,6 +55,10 @@ class CategoriesController < ApplicationController
         flash[:error] = "You must be logged in to access this section"
         redirect_to new_user_session_path # halts request cycle
       end
+    end
+
+    def top_categories
+      Category.where(:parent_id => nil) 
     end
 
 end
