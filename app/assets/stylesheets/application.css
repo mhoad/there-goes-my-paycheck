@@ -10,31 +10,11 @@
  *
  *= require_self
  *= require bootstrap
- *= require bootstrap-glyphicons
+ *= require bootstrap-responsive
+ *= require overwrite
+ *= require font-awesome
+ *= require icon-set
+ *= require style
+ *= require skin
  *= require_tree .
  */
-
-#homepage-carosel{
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-#browse-items {
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-.product-row {
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-.product-snippet {
-  margin-top: 10px;
-}
-
-#social-menu {
-  margin-top: 300px;
-  margin-right: 20px;
-
-}

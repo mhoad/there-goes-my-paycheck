@@ -1,26 +1,19 @@
-<h1 class="text-center">There Goes My Paycheck</h1>
-<nav id="top-menu">
-  <div class="navbar">
-    <ul class="nav navbar-nav">
-      <li class="active"><a href="#">Whats New</a></li>
-      <% @top_level_categories.each do |category| %>
-        <li><%= link_to category.name, category_path(category) %></li>
+<ul class="nav">
+  <li><%= link_to('Home', root_path)%></li>
+  <% @top_level_categories.each do |category| %>
+    <li><%= link_to category.name, category_path(category) %></li>
+  <% end %>           
+  <li class="dropdown">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown">About <b class="caret"></b></a>
+    <ul class="dropdown-menu">
+      <li><a href="<%= about_path %>">About Us</a></li>
+      <li><a href="<%= submit_path %>">Submit Product</a></li>
+      <li><a href="<%= privacy_path %>">Privacy Policy</a></li>
+      <% if user_signed_in? %>
+        <li>
+        <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>        
+        </li>
       <% end %>
-      <li class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-        About <span class="caret"></span>
-        </a>
-        <ul class="dropdown-menu">
-          <li><a href="<%= about_path %>">About Us</a></li>
-          <li><a href="<%= submit_path %>">Submit Product</a></li>
-          <li><a href="<%= privacy_path %>">Privacy Policy</a></li>
-          <% if user_signed_in? %>
-            <li>
-            <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>        
-            </li>
-          <% end %>
-        </ul>
-      </li>
     </ul>
-  </div>
-</nav>
+  </li>  
+</ul>

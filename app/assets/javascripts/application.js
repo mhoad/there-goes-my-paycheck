@@ -11,8 +11,16 @@
 // about supported directives.
 //
 //= require jquery_ujs
-//= require turbolinks
+//= require html5shiv
+//= require jquery.easing.1.3
 //= require bootstrap
-//= require jquery.sticky
+//= require gridrotator/modernizr.custom.26633
+//= require gridrotator/jquery.gridrotator
+//= require gridrotator/setting
+//= require filter/jquery.isotope.min
+//= require filter/setting.js
+//= require totop/jquery.ui.totop
+//= require totop/setting
+//= require custom
 //= require social_tracking
 //= require_tree .

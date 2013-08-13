@@ -1,22 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <title>Paycheck</title>
+  <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= jquery_include_tag Rails.application.config.jquery_version %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,700,300' rel='stylesheet' type='text/css'>
   <%= csrf_meta_tags %>
+  <!--[if lt IE 9]>
+    <link rel="stylesheet" type="text/css" href="css/fallback.css" />
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
 </head>
 <body itemscope itemtype="http://schema.org/WebPage">
 <%= render "shared/facebook_sdk" %>
 
-<div id="wrapper" class="col-12 col-sm-8 col-lg-8 col-offset-2" >
   <%= render 'shared/flash_message' %>
   <%= render "shared/header" %>
   <%= yield %>
-</div>
-<%= render "shared/footer" %>
+  <%= render "shared/footer" %>
 </body>
 </html>

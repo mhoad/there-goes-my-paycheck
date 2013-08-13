@@ -21,6 +21,6 @@ module Paycheck
     # config.i18n.default_locale = :de
 
     config.assets.precompile += ["jquery.min.js"]
-    config.jquery_version = "2.0.3"
+    config.jquery_version = "1.8.1"
   end
 end
