@@ -249,7 +249,7 @@ input.search::-webkit-input-placeholder{
 }
 
 button.search-button{
-	background-image:url(image-url('search-icon.png'));
+	background-image:image-url('search-icon.png');
 	background-repeat:no-repeat;
 	background-position:0 0;
 	background-color:#4b5159;
@@ -407,7 +407,7 @@ Grid rotator
 }
 
 .grid-wrapper{
-	background:url(image-url('grid-wrapper-bg.png')) repeat 0 0;
+	background:image-url('grid-wrapper-bg.png') repeat 0 0;
 	height: 100%;
 	padding-top:40px;
 	position: absolute;
@@ -573,7 +573,7 @@ Animated bg
 ================================================== */
 #animated-bg {
 	height:auto; 
-	background: url(image-url('slides/animatedbg/1.jpg')) repeat left top;
+	background: image-url('slides/animatedbg/1.jpg') repeat left top;
 }
 	
 /*
@@ -609,7 +609,7 @@ ul#portfolio li {
 	position:absolute;
 	width:100%;
 	height:100%;
-	background:url(image-url('caption-image-bg.png')) repeat 0 0;
+	background:image-url('caption-image-bg.png') repeat 0 0;
 	top:100%;
 
 }
@@ -644,7 +644,7 @@ ul#portfolio li {
 }
 
 a.zoom{
-	background:#7d8289 url(image-url('zoom.png')) no-repeat center center;
+	background:#7d8289 image-url('zoom.png') no-repeat center center;
 	text-decoration:none;
 	color:#fff;
 	padding:0;
@@ -1582,7 +1582,7 @@ Info box
 }
 .info-box .bg-bottom{
 	position:absolute;
-	background:url(image-url('slipt.png')) no-repeat 0 0;
+	background:image-url('slipt.png') no-repeat 0 0;
 	width:100%;
 	height:46px;
 	bottom:-46px;
@@ -1661,13 +1661,13 @@ Ui to top
 	height:51px;
 	border:none;
 	text-indent:-999px;
-	background-image:url(image-url('ui.totop.png'));
+	background-image:image-url('ui.totop.png');
 	background-repeat:no-repeat;
 	background-position: top left;
 }
 
 #toTopHover{
-	background-image:url(image-url('ui.totop.png'));
+	background-image:image-url('ui.totop.png');
 	background-repeat:no-repeat;
 	background-position: left -51px;
 	width:51px;
