@@ -1,30 +1,71 @@
-<script type="text/javascript">
-  var _gaq = _gaq || [];
-  var pluginUrl = '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
-  _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
-  _gaq.push(['_setAccount', 'UA-36XXXXXX-1']);
-  _gaq.push(['_trackPageview']);
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-</script>
-
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-  ga('create', 'UA-XXXXXX-X', {'siteSpeedSampleRate': 100});
-  ga('send', 'pageview');
-</script>
-
-<!-- Google -->
-<img style="display: none;" onload="google_user(true)" onerror="google_user(false)" src="https://accounts.google.com/CheckCookie?continue=https%3A%2F%2Fwww.google.com%2Fintl%2Fen%2Fimages%2Flogos%2Faccounts_logo.png&amp;followup=https%3A%2F%2Fwww.google.com%2Fintl%2Fen%2Fimages%2Flogos%2Faccounts_logo.png&amp;chtml=LoginDoneHtml&amp;checkedDomains=youtube&amp;checkConnection=youtube%3A291%3A1" alt=""/>
- 
-<!-- Google Plus -->
-<img style="display: none;" onload="google_plus_user(true)" onerror="google_plus_user(false)" src="https://plus.google.com/up/?continue=https://www.google.com/intl/en/images/logos/accounts_logo.png&amp;type=st&amp;gpsrc=ogpy0" alt=""/>
- 
-<!-- Twitter -->
-<img style="display: none;" onload="twitter_user(true)" onerror="twitter_user(false)" src="https://twitter.com/login?redirect_after_login=%2Fimages%2Fspinner.gif" alt=""/>
+<!-- Start bottom -->
+  <section id="bottom">
+    <div class="container">
+      <div class="row">
+        <div class="span8 offset2 aligncenter"> 
+          <h4>Please subscribe to get news update</h4>
+          <p>
+          Mazim ornatus dolorum cu ius, eu reque albucius gloriatur duo, id qui reque ullum. Soluta delicata cum ad, ius et honestatis omittantur. Erant probatus mea ne. Pri error impetus instructior cu, congue tantas eum an. Magna aeque intellegebat ei qui, nec te perfecto adipiscing. Per natum option et, cum ut semper volutpat.
+          </p>
+          <form class="subscribeform-inline">
+            <input class="subscribe" id="appendedPrependedInput" type="text" placeholder="Enter your email address" />
+            <button class="btn btn-large btn-primary" type="submit">GET NOTIFIED</button>
+          </form>             
+        </div>
+      </div>
+    </div>
+  </section>  
+  <!-- End bottom -->
+  
+<!-- Start footer -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="span12">
+          <div class="footer-social">
+            <a href="#"><i class="icon-facebook"></i></a>
+            <a href="#"><i class="icon-twitter"></i></a>
+            <a href="#"><i class="icon-google-plus"></i></a>
+            <a href="#"><i class="icon-pinterest"></i></a>
+          </div>
+          <p>
+          Vim in idque patrioque, eum et omnes maiorum torquatos. Sale everti sapientem nam ad, vix id congue admodum sensibus, et veri fugit aeque nec. Legere recusabo est ut. Posse ullum eirmod sed in, et oratio voluptua instructior sit. Ei percipit iracundia vel. Corpora pertinax aliquando et sit, adipiscing neglegentur cu mei.
+          </p>
+          <ul class="fotter-nav">
+            <li><%= link_to('Home', root_path)%></li>
+            <li><%= link_to('About Us', about_path)%></li>
+            <li><%= link_to('Submit Product', submit_path)%></li>
+            <li><%= link_to('Privacy Policy', privacy_path)%></li>
+            <li><a href="#">Site map</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div id="subfooter">
+      <div class="container">
+        <div class="row">
+          <div class="span12">
+            <p>2013 &copy; Copyright. All rights Reserved.</p>
+          </div>
+        </div>
+      </div>        
+    </div>
+  </footer> 
+  <!-- End footer -->
+  <%= render "shared/analytics" %>
+  
+  <script type="text/javascript">
+  //<![CDATA[
+    var browser     = navigator.userAgent;
+    var browserRegex  = /(Android|BlackBerry|IEMobile|Nokia|iP(ad|hone|od)|Opera M(obi|ini))/;
+    var isMobile    = false;
+    if(browser.match(browserRegex)) {
+      isMobile      = true;
+      addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+      function hideURLbar(){
+        window.scrollTo(0,1);
+      }
+    }
+  //]]>
+  </script>   
