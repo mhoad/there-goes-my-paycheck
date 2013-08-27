@@ -10,10 +10,10 @@ describe 'Categories' do
     before { visit new_category_path }
 
     describe 'new category page' do
-      it { should have_selector('h2', text: 'Add a new category')}
-      it { should have_field('category_name')}
-      it { should have_field('category_description')}
-      it { should have_field('category_parent_id')}
+      it { should have_selector('h2', text: 'Add a new category') }
+      it { should have_field('category_name') }
+      it { should have_field('category_description') }
+      it { should have_field('category_parent_id') }
     end
 
     describe 'add a new category' do
@@ -24,13 +24,13 @@ describe 'Categories' do
       end
 
       it 'should add a new category' do
-        expect { click_button submit}.to change(Category, :count).by(1)
+        expect { click_button submit }.to change(Category, :count).by(1)
       end
 
       describe 'category page should contain the correct information' do
         before { click_button submit }
 
-        it { should have_content('Category sucessfully created')}
+        it { should have_content('Category sucessfully created') }
         it { should have_selector('h3', text: 'Kids stuff') }
         it { should have_content('Lorem ipsum') }
       end
@@ -42,7 +42,7 @@ describe 'Categories' do
           click_button submit
         end
 
-        it { should have_content('must have at least 50 words')} #Description
+        it { should have_content('must have at least 50 words') } #Description
         it { should have_content('minimum is 3 characters') } #Name
       end
     end
@@ -107,10 +107,10 @@ describe 'Categories' do
     describe 'not able to create a new category' do
       before { visit new_category_path }
 
-      it { should_not have_selector('h2', text: 'Add a new category')}
-      it { should_not have_field('category_name')}
-      it { should_not have_field('category_description')}
-      it { should_not have_field('category_parent_id')}
+      it { should_not have_selector('h2', text: 'Add a new category') }
+      it { should_not have_field('category_name') }
+      it { should_not have_field('category_description') }
+      it { should_not have_field('category_parent_id') }
     end
 
     describe 'not able to edit a category' do

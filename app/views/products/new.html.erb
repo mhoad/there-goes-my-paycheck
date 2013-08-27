@@ -1,0 +1,7 @@
+<h2>Add a new product</h2>
+<%= simple_form_for @product do |f| %>
+  <%= f.input :name %>
+  <%= f.input :description %>
+  <%= f.input :url %>
+  <%= f.button :submit %>
+<% end %>

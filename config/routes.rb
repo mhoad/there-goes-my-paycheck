@@ -1,5 +1,7 @@
 Paycheck::Application.routes.draw do
   
+  resources :products
+
   devise_for :users
   root 'static_pages#index'
   get '/about' => 'static_pages#about' 
