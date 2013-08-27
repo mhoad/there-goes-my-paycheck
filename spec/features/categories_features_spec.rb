@@ -67,7 +67,7 @@ describe 'Categories' do
           click_button submit
         end
 
-        it { should have_content('Product sucessfully updated') }
+        it { should have_content('Category sucessfully updated') }
         it { should have_content(category.name) }
       end
 

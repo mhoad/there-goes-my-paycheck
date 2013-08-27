@@ -142,7 +142,7 @@
   },
   "Cucumber Features": {
     "coverage": {
-      "/Users/markhoad/code/rails/paycheck/app/models/user.rb": [
+      "/Users/Mark/there-goes-my-paycheck/app/models/user.rb": [
         1,
         null,
         null,
@@ -151,20 +151,20 @@
         null,
         null
       ],
-      "/Users/markhoad/code/rails/paycheck/app/helpers/application_helper.rb": [
+      "/Users/Mark/there-goes-my-paycheck/app/helpers/application_helper.rb": [
         1,
         null,
         null
       ],
-      "/Users/markhoad/code/rails/paycheck/app/helpers/categories_helper.rb": [
+      "/Users/Mark/there-goes-my-paycheck/app/helpers/categories_helper.rb": [
         1,
         null
       ],
-      "/Users/markhoad/code/rails/paycheck/app/helpers/static_pages_helper.rb": [
+      "/Users/Mark/there-goes-my-paycheck/app/helpers/static_pages_helper.rb": [
         1,
         null
       ],
-      "/Users/markhoad/code/rails/paycheck/app/controllers/categories_controller.rb": [
+      "/Users/Mark/there-goes-my-paycheck/app/controllers/categories_controller.rb": [
         1,
         1,
         null,
@@ -226,7 +226,7 @@
         null,
         null
       ],
-      "/Users/markhoad/code/rails/paycheck/app/controllers/application_controller.rb": [
+      "/Users/Mark/there-goes-my-paycheck/app/controllers/application_controller.rb": [
         1,
         null,
         null,
@@ -241,7 +241,7 @@
         null,
         null
       ],
-      "/Users/markhoad/code/rails/paycheck/app/controllers/static_pages_controller.rb": [
+      "/Users/Mark/there-goes-my-paycheck/app/controllers/static_pages_controller.rb": [
         1,
         1,
         null,
@@ -260,7 +260,7 @@
         null,
         null
       ],
-      "/Users/markhoad/code/rails/paycheck/app/models/category.rb": [
+      "/Users/Mark/there-goes-my-paycheck/app/models/category.rb": [
         1,
         1,
         1,
@@ -275,6 +275,6 @@
         null
       ]
     },
-    "timestamp": 1376418161
+    "timestamp": 1377578190
   }
 }
