@@ -1,6 +1,6 @@
 Paycheck::Application.routes.draw do
   
-  resources :products
+  
 
   devise_for :users
   root 'static_pages#index'
@@ -8,7 +8,9 @@ Paycheck::Application.routes.draw do
   get '/submit' => 'static_pages#submit'
   get '/privacy' => 'static_pages#privacy'
 
-  resources :categories, except: :index, :path => '/'
+  resources :categories, except: :index, :path => '/' do
+    resources :products, except: :index, :path => '/'
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

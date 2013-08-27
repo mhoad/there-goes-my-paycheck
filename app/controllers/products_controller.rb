@@ -1,13 +1,15 @@
 class ProductsController < ApplicationController
   def new
-    @product = Product.new
+    @category = Category.find(params[:category_id])
+    @product = @category.products.new
   end
 
   def create
-    @product = Product.new(product_params)
+    @category = Category.find(params[:category_id])
+    @product = @category.products.new(product_params)
     if @product.save
       flash[:success] = "Product successfully created"
-      redirect_to @product
+      redirect_to category_product_path(:id => @product.id)
     else
       render 'new'
     end
@@ -22,6 +24,6 @@ class ProductsController < ApplicationController
     # since you'll be able to reuse the same permit list between create and update. Also, you
     # can specialize this method with per-user checking of permissible attributes.
     def product_params
-      params.require(:product).permit(:name, :description, :url)
+      params.require(:product).permit(:name, :description, :url, :category_id)
     end
 end

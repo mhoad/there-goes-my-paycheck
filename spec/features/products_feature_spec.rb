@@ -4,11 +4,12 @@ describe 'Products' do
   subject { page }
   let(:submit) { 'Create Product' }
   before do
-    sign_in FactoryGirl.create(:admin_user) 
+    sign_in FactoryGirl.create(:admin_user)
+    @sample_category = FactoryGirl.create(:category)
   end
 
   describe 'new products' do
-    before { visit new_product_path }
+    before { visit new_category_product_path(@sample_category) }
 
     describe 'new products page' do
       it { should have_selector('h2', text: 'Add a new product') }

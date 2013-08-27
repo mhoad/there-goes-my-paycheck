@@ -13,6 +13,7 @@
 class Category < ActiveRecord::Base
   has_many :subcategories, :class_name => "Category", :foreign_key => "parent_id", :dependent => :destroy
   belongs_to :parent_category, :class_name => "Category", :foreign_key=>"parent_id"
+  has_many :products
 
   validates :name, :description, presence: true
   validates :name, :length => { :minimum => 3 }

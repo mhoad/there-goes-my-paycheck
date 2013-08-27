@@ -1,7 +1,8 @@
 <h2>Add a new product</h2>
-<%= simple_form_for @product do |f| %>
+<%= simple_form_for [@category, @product] do |f| %>
   <%= f.input :name %>
   <%= f.input :description %>
   <%= f.input :url %>
+  <%= f.input :category_id %>
   <%= f.button :submit %>
 <% end %>
