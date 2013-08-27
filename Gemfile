@@ -13,6 +13,7 @@ end
 group :development do
   gem "better_errors"
   gem 'binding_of_caller'
+  gem 'annotate', ">=2.5.0"
 end
 
 group :test do
@@ -31,6 +32,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 gem 'simple_form'
 gem "devise", "~> 3.0.2"
+
 
 
 group :doc do

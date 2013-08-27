@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: categories
+#
+#  id          :integer          not null, primary key
+#  name        :string(255)
+#  parent_id   :integer
+#  created_at  :datetime
+#  updated_at  :datetime
+#  description :text
+#
+
 class Category < ActiveRecord::Base
   has_many :subcategories, :class_name => "Category", :foreign_key => "parent_id", :dependent => :destroy
   belongs_to :parent_category, :class_name => "Category", :foreign_key=>"parent_id"
