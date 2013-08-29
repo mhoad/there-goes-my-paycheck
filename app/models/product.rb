@@ -8,6 +8,7 @@
 #  url         :text
 #  created_at  :datetime
 #  updated_at  :datetime
+#  category_id :integer
 #
 
 class Product < ActiveRecord::Base
