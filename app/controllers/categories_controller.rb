@@ -1,8 +1,8 @@
 class CategoriesController < ApplicationController
   before_action :require_login, except:[:show, :index]
+  before_action :set_category, only: [:show, :edit, :update, :destroy]
 
   def show
-    @category = Category.find(params[:id])
     @categories = @category.subcategories # Grab all sub-categories
   end
 
@@ -17,27 +17,27 @@ class CategoriesController < ApplicationController
       flash[:success] = "Category sucessfully created"
       redirect_to @category
     else
+      flash[:alert] = "Category not created"
       render 'new'
     end
   end
 
   def edit
-    @category = Category.find(params[:id])
   end
 
   def update
-    @category = Category.find(params[:id])
     @category.update_attributes(category_params)
     if @category.save
       flash[:success] = "Category sucessfully updated"
       redirect_to @category
     else
+      flash[:alert] = "Category not updated"
       render 'edit'
     end
   end
 
   def destroy
-    @category = Category.find(params[:id]).destroy
+    @category.destroy
     flash[:success] = "Category successfully deleted"
     redirect_to categories_path
   end
@@ -48,6 +48,10 @@ class CategoriesController < ApplicationController
     # can specialize this method with per-user checking of permissible attributes.
     def category_params
       params.require(:category).permit(:name, :description, :parent_id)
+    end
+
+    def set_category
+      @category = Category.find(params[:id])
     end
 
     def require_login
