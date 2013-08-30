@@ -25,7 +25,7 @@ feature 'Creating Products' do
     expect(page).to have_content('Product successfully created')
     expect(page).to have_content('Sample Product')
     expect(page).to have_content('Lorem ipsum')
-    expect(page).to have_content('http://www.example.com/')
+    expect(page).to have_link('www.example.com', href:'http://www.example.com/' )
   end
 
 

@@ -29,7 +29,8 @@ feature 'Editing Products' do
     expect(page).to have_content('Product successfully updated')
     expect(page).to have_content('Laser Pointer')
     expect(page).to have_content('Lorem Ipsum')
-    expect(page).to have_content('http://www.sample.com/')
+    expect(page).to have_link('www.sample.com', href:'http://www.sample.com/' )
+
   end
 
   scenario 'edit product with invalid attributes' do
