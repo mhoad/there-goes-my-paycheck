@@ -28,5 +28,14 @@ feature 'Creating Products' do
     expect(page).to have_link('www.example.com', href:'http://www.example.com/' )
   end
 
+  scenario 'attempt to create a product with invalid attributes' do
+    expect { click_button submit }.to_not change(Product, :count).by(1)
+    expect(page).to have_content('Product not created')
+    expect(page).to have_content("Name can't be blank")
+    expect(page).to have_content("Description must have at least 30 words")
+    expect(page).to have_content("Url can't be blank")
+    expect(page).to have_content("Url is invalid")
+  end
+
 
 end

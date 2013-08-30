@@ -16,6 +16,7 @@ class ProductsController < ApplicationController
       flash[:success] = "Product successfully created"
       redirect_to [@category, @product]
     else
+      flash[:alert] = "Product not created"
       render 'new'
     end
   end
