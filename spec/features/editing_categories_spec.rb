@@ -11,8 +11,10 @@ feature 'Editing Categories' do
 
   scenario 'edit category page contains the correct information' do
     expect(page).to have_content('Edit Category')
-    expect(page).to have_field('category_name')
-    expect(page).to have_field('category_description')
+    expect(page).to have_field('category_name',
+                                :with => category.name)
+    expect(page).to have_field('category_description',
+                                :with => category.description)
     expect(page).to have_button(submit)
   end
 

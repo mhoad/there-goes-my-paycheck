@@ -1,4 +1,6 @@
 class CategoriesController < ApplicationController
+  include ApplicationHelper
+  
   before_action :require_login, except:[:show, :index]
   before_action :set_category, only: [:show, :edit, :update, :destroy]
 
@@ -52,13 +54,6 @@ class CategoriesController < ApplicationController
 
     def set_category
       @category = Category.find(params[:id])
-    end
-
-    def require_login
-      unless user_signed_in? && current_user.admin?
-        flash[:error] = "You must be logged in to access this section"
-        redirect_to new_user_session_path # halts request cycle
-      end
     end
 
 end

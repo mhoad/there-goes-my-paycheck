@@ -1,13 +1,17 @@
 class ProductsController < ApplicationController
+  include ApplicationHelper
+  
   before_action :set_category
   before_action :set_product, only: [:show, :edit, :update, :destroy]
+  before_action :require_login, except:[:show]
+
 
   def new
-    @product = @category.products.new
+    @product = @category.products.build
   end
 
   def create
-    @product = @category.products.new(product_params)
+    @product = @category.products.build(product_params)
     if @product.save
       flash[:success] = "Product successfully created"
       redirect_to [@category, @product]
@@ -18,6 +22,19 @@ class ProductsController < ApplicationController
 
   def show
 
+  end
+
+  def edit
+  end
+
+  def update
+    if @product.update(product_params)
+      flash[:notice] = 'Product successfully updated'
+      redirect_to [@category, @product]
+    else
+      flash[:alert] = 'Product not updated'
+      render 'edit'
+    end
   end
 
   private
