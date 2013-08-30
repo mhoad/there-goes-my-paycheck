@@ -1,6 +1,7 @@
 class StaticPagesController < ApplicationController
   def index
-    @products = Product.all
+    @products = Product.all.paginate(:page => params[:page],
+                                            :per_page => 3)
     @categories = Category.all
   end
 

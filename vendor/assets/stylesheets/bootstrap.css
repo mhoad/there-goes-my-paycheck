@@ -5153,8 +5153,8 @@ input[type="submit"].btn.btn-mini {
   float: right;
 }
 
-.pager .previous > a,
-.pager .previous > span {
+.pager .previous_page > a,
+.pager .previous_page > span {
   float: left;
 }
 

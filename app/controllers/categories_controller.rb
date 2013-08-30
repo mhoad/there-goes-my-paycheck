@@ -6,6 +6,9 @@ class CategoriesController < ApplicationController
 
   def show
     @categories = @category.subcategories # Grab all sub-categories
+    @products = @category.products.paginate(:page => params[:page],
+                                            :per_page => 3)
+
   end
 
   def new
@@ -55,5 +58,4 @@ class CategoriesController < ApplicationController
     def set_category
       @category = Category.find(params[:id])
     end
-
 end

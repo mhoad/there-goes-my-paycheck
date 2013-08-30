@@ -100,7 +100,7 @@
             <li><a href="#" data-filter=".free">Free items</a></li>
           </ul>
         </div>  
-        <span class="page-count">1 of 264 Products</span>
+        <span class="page-count"><%= page_entries_info @products %></span>
       </div>      
       </div>
       <ul id="portfolio" class="row clearfix marginbot10">
@@ -128,10 +128,11 @@
       </ul> 
       <div class="row">
         <div class="span12">
-          <ul class="pager marginnone">
-            <li class="previous disabled"><a href="#">&larr; Older</a></li>
-            <li class="next"><a href="#">Newer &rarr;</a></li>
-          </ul>
+         
+          <%= will_paginate @products, :page_links => false, 
+          :renderer => ProductPaginationHelper::LinkRenderer, 
+          :class => 'pager marginnone' %>
+          
         </div>
       </div>
     </div>

@@ -33,6 +33,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 gem 'simple_form'
 gem "devise", "~> 3.0.2"
+gem "will_paginate", "~> 3.0.4"
 
 
 

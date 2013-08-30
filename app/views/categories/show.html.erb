@@ -77,11 +77,11 @@
         </div> 
          
         <span class="page-count">
-          Browsing <%= @category.products.count %> Products
+          <%= page_entries_info @products %>
           </span>
         <div class="clear"></div>
         <ul id="portfolio" class="row clearfix marginbot10">
-          <% @category.products.each do |product| %>
+          <% @products.each do |product| %>
             <li class="item span3 latest free">
               <div class="image-wrapper">
                 <div class="image-caption"></div>
@@ -102,8 +102,17 @@
             </li>
           <% end %>
         </ul>
-      </div>  
-       
+        <div class="row">
+        <div class="span9">
+         
+          <%= will_paginate @products, :page_links => false, 
+          :renderer => ProductPaginationHelper::LinkRenderer, 
+          :class => 'pager marginnone' %>
+          
+        </div>
+      </div>
+      </div>
+
       </div>
     </div>
   </section>
