@@ -51,7 +51,4 @@ feature 'Editing Products' do
     expect(page).to have_content('You must be logged in')
     expect(page).to_not have_content('Edit Product')
   end
-
-
-
 end

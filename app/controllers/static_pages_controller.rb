@@ -1,6 +1,7 @@
 class StaticPagesController < ApplicationController
   def index
-    
+    @products = Product.all
+    @categories = Category.all
   end
 
   def about
@@ -14,4 +15,5 @@ class StaticPagesController < ApplicationController
   def privacy
     
   end
+
 end

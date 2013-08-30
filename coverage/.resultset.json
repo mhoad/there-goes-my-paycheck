@@ -259,7 +259,7 @@
         1,
         1,
         null,
-        32,
+        36,
         null,
         null,
         null
@@ -316,6 +316,7 @@
       ],
       "/Users/Mark/there-goes-my-paycheck/app/helpers/static_pages_helper.rb": [
         1,
+        null,
         null
       ],
       "/Users/Mark/there-goes-my-paycheck/app/controllers/categories_controller.rb": [
@@ -326,7 +327,7 @@
         1,
         null,
         1,
-        7,
+        9,
         null,
         null,
         1,
@@ -374,7 +375,7 @@
         null,
         null,
         1,
-        14,
+        16,
         null,
         null,
         null
@@ -389,7 +390,7 @@
         1,
         null,
         1,
-        150,
+        156,
         null,
         null,
         null
@@ -420,7 +421,6 @@
         1,
         null,
         null,
-        null,
         1,
         null,
         null,
@@ -443,22 +443,19 @@
         null,
         null,
         1,
-        12,
+        14,
         null,
         null,
         1,
-        9,
+        11,
         null,
         null
       ],
       "/Users/Mark/there-goes-my-paycheck/app/controllers/static_pages_controller.rb": [
         1,
         1,
-        null,
-        null,
-        null,
-        1,
-        null,
+        37,
+        37,
         null,
         null,
         1,
@@ -466,6 +463,11 @@
         null,
         null,
         1,
+        null,
+        null,
+        null,
+        1,
+        null,
         null,
         null,
         null
@@ -492,13 +494,13 @@
         1,
         1,
         null,
-        21,
+        25,
         null,
         null,
         1,
         null
       ]
     },
-    "timestamp": 1377837866
+    "timestamp": 1377844005
   }
 }

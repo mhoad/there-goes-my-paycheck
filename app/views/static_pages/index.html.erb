@@ -92,6 +92,7 @@
           <span class="caret"></span>
           </a>        
           <ul id="filters" class="dropdown-menu">
+            <!-- works by the li class names -->
             <li><a href="#" data-filter=".all">All items</a></li>
             <li><a href="#" data-filter=".latest">Latest items</a></li>
             <li><a href="#" data-filter=".popular">Popular items</a></li>
@@ -103,13 +104,17 @@
       </div>      
       </div>
       <ul id="portfolio" class="row clearfix marginbot10">
+        <% @products.each do |product| %>
         <li class="item span4 all free popular latest">
           <div class="image-wrapper">
             <div class="image-caption"></div>
             <div class="image-title">
-              <h4><a href="#">Product Name</a></h4>
+              <h4>
+                <%= link_to product.name, 
+                [@categories.find(product.category_id), product] %>
+              </h4>
             </div>
-            <a href="#" class="zoom">zoom</a>
+            <a href="<%= product.url %>" class="zoom">zoom</a>
             <div class="portfolio-metta">
               <a href="#"><i class="icon-pinterest"></i>3445</a>
               <a href="#"><i class="icon-twitter"></i>98</a>
@@ -119,134 +124,7 @@
             <img src="http://placehold.it/640x480" alt=""/>
           </div>
         </li>
-        <li class="item span4 all premium">
-          <div class="image-wrapper">
-            <div class="image-caption"></div>
-            <div class="image-title">
-              <h4><a href="#">Product Name</a></h4>
-            </div>
-            <a href="#" class="zoom">zoom</a>
-            <div class="portfolio-metta">
-              <a href="#"><i class="icon-pinterest"></i>3445</a>
-              <a href="#"><i class="icon-twitter"></i>98</a>
-              <a href="#"><i class="icon-facebook"></i>205</a>
-              <a href="#"><i class="icon-google-plus"></i>205</a>
-            </div>  
-            <img src="http://placehold.it/640x480" alt=""/>
-          </div>        
-        </li>
-        <li class="item span4 all free">
-          <div class="image-wrapper">
-            <div class="image-caption"></div>
-            <div class="image-title">
-              <h4><a href="#">Product Name</a></h4>
-            </div>
-            <a href="#" class="zoom">zoom</a>
-            <div class="portfolio-metta">
-              <a href="#"><i class="icon-pinterest"></i>3445</a>
-              <a href="#"><i class="icon-twitter"></i>98</a>
-              <a href="#"><i class="icon-facebook"></i>205</a>
-              <a href="#"><i class="icon-google-plus"></i>205</a>
-            </div>  
-            <img src="http://placehold.it/640x480" alt=""/>
-          </div>          
-        </li>
-        <li class="item span4 all free">
-          <div class="image-wrapper">
-            <div class="image-caption"></div>
-            <div class="image-title">
-              <h4><a href="#">Product Name</a></h4>
-            </div>
-            <a href="#" class="zoom">zoom</a>
-            <div class="portfolio-metta">
-              <a href="#"><i class="icon-pinterest"></i>3445</a>
-              <a href="#"><i class="icon-twitter"></i>98</a>
-              <a href="#"><i class="icon-facebook"></i>205</a>
-              <a href="#"><i class="icon-google-plus"></i>205</a>
-            </div>
-            <img src="http://placehold.it/640x480" alt=""/>
-          </div>
-        </li> 
-        <li class="item span4 all premium popular">
-          <div class="image-wrapper">
-            <div class="image-caption"></div>
-            <div class="image-title">
-              <h4><a href="#">Product Name</a></h4>
-            </div>
-            <a href="#" class="zoom">zoom</a>
-            <div class="portfolio-metta">
-              <a href="#"><i class="icon-pinterest"></i>3445</a>
-              <a href="#"><i class="icon-twitter"></i>98</a>
-              <a href="#"><i class="icon-facebook"></i>205</a>
-              <a href="#"><i class="icon-google-plus"></i>205</a>
-            </div>  
-            <img src="http://placehold.it/640x480" alt=""/>
-          </div>
-        </li>
-        <li class="item span4 all free">
-          <div class="image-wrapper">
-            <div class="image-caption"></div>
-            <div class="image-title">
-              <h4><a href="#">Product Name</a></h4>
-            </div>
-            <a href="#" class="zoom">zoom</a>
-            <div class="portfolio-metta">
-              <a href="#"><i class="icon-pinterest"></i>3445</a>
-              <a href="#"><i class="icon-twitter"></i>98</a>
-              <a href="#"><i class="icon-facebook"></i>205</a>
-              <a href="#"><i class="icon-google-plus"></i>205</a>
-            </div>
-            <img src="http://placehold.it/640x480" alt=""/>
-          </div>        
-        </li>
-        <li class="item span4 all free latest">
-          <div class="image-wrapper">
-            <div class="image-caption"></div>
-            <div class="image-title">
-              <h4><a href="#">Product Name</a></h4>
-            </div>
-            <a href="#" class="zoom">zoom</a>
-            <div class="portfolio-metta">
-              <a href="#"><i class="icon-pinterest"></i>3445</a>
-              <a href="#"><i class="icon-twitter"></i>98</a>
-              <a href="#"><i class="icon-facebook"></i>205</a>
-              <a href="#"><i class="icon-google-plus"></i>205</a>
-            </div>
-            <img src="http://placehold.it/640x480" alt=""/>
-          </div>        
-        </li>
-        <li class="item span4 all free">
-          <div class="image-wrapper">
-            <div class="image-caption"></div>
-            <div class="image-title">
-              <h4><a href="#">Product Name</a></h4>
-            </div>
-            <a href="#" class="zoom">zoom</a>
-            <div class="portfolio-metta">
-              <a href="#"><i class="icon-pinterest"></i>3445</a>
-              <a href="#"><i class="icon-twitter"></i>98</a>
-              <a href="#"><i class="icon-facebook"></i>205</a>
-              <a href="#"><i class="icon-google-plus"></i>205</a>
-            </div>
-            <img src="http://placehold.it/640x480" alt=""/>
-          </div>        
-        </li> 
-        <li class="item span4 all latest popular">
-          <div class="image-wrapper">
-            <div class="image-caption"></div>
-            <div class="image-title">
-              <h4><a href="#">Product Name</a></h4>
-            </div>
-            <a href="#" class="zoom">zoom</a>
-            <div class="portfolio-metta">
-              <a href="#"><i class="icon-pinterest"></i>3445</a>
-              <a href="#"><i class="icon-twitter"></i>98</a>
-              <a href="#"><i class="icon-facebook"></i>205</a>
-              <a href="#"><i class="icon-google-plus"></i>205</a>
-            </div>
-            <img src="http://placehold.it/640x480" alt=""/>
-          </div>
-        </li>         
+        <% end %>
       </ul> 
       <div class="row">
         <div class="span12">

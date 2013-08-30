@@ -76,137 +76,31 @@
           </ul>
         </div> 
          
-        <span class="page-count">1 of 20 Products</span>
+        <span class="page-count">
+          Browsing <%= @category.products.count %> Products
+          </span>
         <div class="clear"></div>
         <ul id="portfolio" class="row clearfix marginbot10">
-          <li class="item span3 latest free">
-            <div class="image-wrapper">
-              <div class="image-caption"></div>
-              <div class="image-title">
-                <h4><a href="#product_page">Product Name</a></h4>
+          <% @category.products.each do |product| %>
+            <li class="item span3 latest free">
+              <div class="image-wrapper">
+                <div class="image-caption"></div>
+                <div class="image-title">
+                  <h4>
+                    <%= link_to product.name, [@category, product] %>
+                  </h4>
+                </div>
+                <a href="<%= product.url %>" class="zoom" target="_blank">zoom</a>
+                <div class="portfolio-metta">
+                  <a href="#"><i class="icon-pinterest"></i>3445</a>
+                <a href="#"><i class="icon-twitter"></i>98</a>
+                <a href="#"><i class="icon-facebook"></i>205</a>
+                <a href="#"><i class="icon-google-plus"></i>205</a>
+                </div>            
+                <img src="http://placehold.it/640x480" alt=""/>
               </div>
-              <a href="#affiliate_link" class="zoom">zoom</a>
-              <div class="portfolio-metta">
-                <a href="#"><i class="icon-pinterest"></i>3445</a>
-              <a href="#"><i class="icon-twitter"></i>98</a>
-              <a href="#"><i class="icon-facebook"></i>205</a>
-              <a href="#"><i class="icon-google-plus"></i>205</a>
-              </div>            
-              <img src="http://placehold.it/640x480" alt=""/>
-            </div>
-          </li>
-          <li class="item span3 latest free">
-            <div class="image-wrapper">
-              <div class="image-caption"></div>
-              <div class="image-title">
-                <h4><a href="#product_page">Product Name</a></h4>
-              </div>
-              <a href="#affiliate_link" class="zoom">zoom</a>
-              <div class="portfolio-metta">
-                <a href="#"><i class="icon-pinterest"></i>3445</a>
-              <a href="#"><i class="icon-twitter"></i>98</a>
-              <a href="#"><i class="icon-facebook"></i>205</a>
-              <a href="#"><i class="icon-google-plus"></i>205</a>
-              </div>  
-              <img src="http://placehold.it/640x480" alt=""/>
-            </div>        
-          </li>
-          <li class="item span3 latest free popular">
-          <div class="image-wrapper">
-            <div class="image-caption"></div>
-            <div class="image-title">
-              <h4><a href="#product_page">Product Name</a></h4>
-            </div>
-            <a href="#affiliate_link" class="zoom">zoom</a>
-            <div class="portfolio-metta">
-              <a href="#"><i class="icon-pinterest"></i>3445</a>
-              <a href="#"><i class="icon-twitter"></i>98</a>
-              <a href="#"><i class="icon-facebook"></i>205</a>
-              <a href="#"><i class="icon-google-plus"></i>205</a>
-            </div>
-            <img src="http://placehold.it/640x480" alt=""/>
-          </div>            
-          </li>
-          <li class="item span3 premium">
-            <div class="image-wrapper">
-              <div class="image-caption"></div>
-              <div class="image-title">
-                <h4><a href="#product_page">Product Name</a></h4>
-              </div>
-              <a href="#affiliate_link" class="zoom">zoom</a>
-              <div class="portfolio-metta">
-                <a href="#"><i class="icon-pinterest"></i>3445</a>
-              <a href="#"><i class="icon-twitter"></i>98</a>
-              <a href="#"><i class="icon-facebook"></i>205</a>
-              <a href="#"><i class="icon-google-plus"></i>205</a>
-              </div>  
-              <img src="http://placehold.it/640x480" alt=""/>
-            </div>      
-          </li> 
-          <li class="item span3 free">
-            <div class="image-wrapper">
-              <div class="image-caption"></div>
-              <div class="image-title">
-                <h4><a href="#product_page">Product Name</a></h4>
-              </div>
-              <a href="#affiliate_link" class="zoom">zoom</a>
-              <div class="portfolio-metta">
-                <a href="#"><i class="icon-pinterest"></i>3445</a>
-              <a href="#"><i class="icon-twitter"></i>98</a>
-              <a href="#"><i class="icon-facebook"></i>205</a>
-              <a href="#"><i class="icon-google-plus"></i>205</a>
-              </div>
-              <img src="http://placehold.it/640x480" alt=""/>
-            </div>
-          </li>
-          <li class="item span3 free popular">
-            <div class="image-wrapper">
-              <div class="image-caption"></div>
-              <div class="image-title">
-                <h4><a href="#product_page">Product Name</a></h4>
-              </div>
-              <a href="#affiliate_link" class="zoom">zoom</a>
-              <div class="portfolio-metta">
-                <a href="#"><i class="icon-pinterest"></i>3445</a>
-              <a href="#"><i class="icon-twitter"></i>98</a>
-              <a href="#"><i class="icon-facebook"></i>205</a>
-              <a href="#"><i class="icon-google-plus"></i>205</a>
-              </div>  
-              <img src="http://placehold.it/640x480" alt=""/>
-            </div>        
-          </li>
-          <li class="item span3 premium">
-            <div class="image-wrapper">
-              <div class="image-caption"></div>
-              <div class="image-title">
-                <h4><a href="#product_page">Product Name</a></h4>
-              </div>
-              <a href="#affiliate_link" class="zoom">zoom</a>
-              <div class="portfolio-metta">
-              <a href="#"><i class="icon-pinterest"></i>3445</a>
-              <a href="#"><i class="icon-twitter"></i>98</a>
-              <a href="#"><i class="icon-facebook"></i>205</a>
-              <a href="#"><i class="icon-google-plus"></i>205</a>
-              </div>
-              <img src="http://placehold.it/640x480" alt=""/>
-            </div>              
-          </li>
-          <li class="item span3 free">
-            <div class="image-wrapper">
-              <div class="image-caption"></div>
-              <div class="image-title">
-                <h4><a href="#product_page">Product Name</a></h4>
-              </div>
-              <a href="#affiliate_link" class="zoom">zoom</a>
-              <div class="portfolio-metta">
-              <a href="#"><i class="icon-pinterest"></i>3445</a>
-              <a href="#"><i class="icon-twitter"></i>98</a>
-              <a href="#"><i class="icon-facebook"></i>205</a>
-              <a href="#"><i class="icon-google-plus"></i>205</a>
-              </div>
-              <img src="http://placehold.it/640x480" alt=""/>
-            </div>          
-          </li> 
+            </li>
+          <% end %>
         </ul>
       </div>  
        

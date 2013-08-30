@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   include ApplicationHelper
-  
+
   before_action :set_category
   before_action :set_product, only: [:show, :edit, :update, :destroy]
   before_action :require_login, except:[:show]
@@ -21,7 +21,6 @@ class ProductsController < ApplicationController
   end
 
   def show
-
   end
 
   def edit
