@@ -29,6 +29,8 @@ describe Product do
       swine short loin. Pork loin shankle short ribs jowl. 
       Jowl tenderloin venison filet mignon ham ham hock.",
       :url => "http://www.sampleproduct.com/",
+      :picture => File.open(Rails.root.join("spec", "factories", 
+                                            "images", "1024x680.jpg"))
     }
   end
 
@@ -67,6 +69,26 @@ describe Product do
     invalid_urls.each do |url|
       invalid_url_product = Product.new(@attr.merge(:url => url))
       invalid_url_product.should_not be_valid
+    end
+  end
+
+  it "should reject the wrong image filetypes" do
+    invalid_pictures = ["350x150.gif",
+                        "1024x680.gif"]
+    invalid_pictures.each do |picture|
+      invalid_picture_product = Product.new(@attr.merge(
+      :picture => File.open(Rails.root.join("spec", "factories", "images", picture))))
+      invalid_picture_product.should_not be_valid
+    end
+  end
+
+  it "should accept the correct image filetypes" do
+    valid_pictures = ["1024x680.jpg",
+                      "1024x680.png"]
+    valid_pictures.each do |picture|
+      valid_picture_product = Product.new(@attr.merge(
+      :picture => File.open(Rails.root.join("spec", "factories", "images", picture))))
+      valid_picture_product.should be_valid
     end
   end
 end

@@ -12,5 +12,6 @@ FactoryGirl.define do
                 pork chop. Tail pastrami fatback swine, pork belly 
                 tri-tip pork loin."
     url "http://www.example.com/"
+    picture File.new(Rails.root + 'spec/factories/images/1024x680.jpg')
   end
 end

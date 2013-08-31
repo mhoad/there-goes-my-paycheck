@@ -26,6 +26,9 @@ class Product < ActiveRecord::Base
 
   VALID_URL_REGEX = /\A^(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(([0-9]{1,5})?\/.*)?$\z/ix
 
+  validates_attachment :picture, :presence => true,
+  :content_type => { :content_type => ["image/jpeg", "image/jpg", "image/png"] }
+
   validates :name, presence: true
   validates :description, :length => {
     :minimum   => 30,

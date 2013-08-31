@@ -17,10 +17,13 @@ feature 'Creating Products' do
   end
 
   scenario 'add a new product' do
+    file_path = File.join(Rails.root,'spec/factories/images/1024x680.jpg')
+    
     fill_in 'product_name',         with: 'Sample Product'
     fill_in 'product_description',  with: 'Lorem ipsum' * 30
     fill_in 'product_url',          with: 'http://www.example.com/'
-
+    page.attach_file 'product_picture', file_path
+    
     expect { click_button submit }.to change(Product, :count).by(1)
     expect(page).to have_content('Product successfully created')
     expect(page).to have_content('Sample Product')
