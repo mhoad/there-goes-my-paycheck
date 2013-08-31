@@ -2,13 +2,18 @@
 #
 # Table name: products
 #
-#  id          :integer          not null, primary key
-#  name        :string(255)
-#  description :text
-#  url         :text
-#  created_at  :datetime
-#  updated_at  :datetime
-#  category_id :integer
+#  id                   :integer          not null, primary key
+#  name                 :string(255)
+#  description          :text
+#  url                  :string(255)
+#  created_at           :datetime
+#  updated_at           :datetime
+#  category_id          :integer
+#  slug                 :string(255)
+#  picture_file_name    :string(255)
+#  picture_content_type :string(255)
+#  picture_file_size    :integer
+#  picture_updated_at   :datetime
 #
 
 require 'spec_helper'

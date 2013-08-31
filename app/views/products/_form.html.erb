@@ -1,4 +1,4 @@
-<%= simple_form_for [@category, @product] do |f| %>
+<%= simple_form_for [@category, @product], :html => { :multipart => true } do |f| %>
 <% if @product.errors.any? %>
   <div id="error_explanation">
     <h2><%= pluralize(@product.errors.count, "error") %>
@@ -15,5 +15,6 @@
   <%= f.input :description %>
   <%= f.input :url %>
   <%= f.input :category_id %>
+  <%= f.file_field :picture %>
   <%= f.button :submit %>
 <% end %>
