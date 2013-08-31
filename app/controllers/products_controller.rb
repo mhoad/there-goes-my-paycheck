@@ -46,7 +46,8 @@ class ProductsController < ApplicationController
     end
 
     def set_category
-      @category = Category.find(params[:category_id])
+      #@category = Category.find(params[:category_id])
+      @category = Category.friendly.find(params[:category_id])
     end
 
     def set_product
