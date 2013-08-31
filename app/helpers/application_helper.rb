@@ -15,6 +15,12 @@ def get_product_tags(product)
   return product_tags.strip
 end
 
+def get_social_tagline
+  tagline = [ "Show us some love already",
+              "Tell your friends" ]
+  tagline.sample
+end
+
 private
 
   def is_latest_product?(product)
