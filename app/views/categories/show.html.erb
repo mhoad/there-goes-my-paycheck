@@ -82,7 +82,7 @@
         <div class="clear"></div>
         <ul id="portfolio" class="row clearfix marginbot10">
           <% @products.each do |product| %>
-            <li class="item span3 latest free">
+            <li class="item span3 <%= "latest" if latest_product(product)%>">
               <div class="image-wrapper">
                 <div class="image-caption"></div>
                 <div class="image-title">
@@ -90,13 +90,7 @@
                     <%= link_to product.name, [@category, product] %>
                   </h4>
                 </div>
-                <a href="<%= product.url %>" class="zoom" target="_blank">zoom</a>
-                <div class="portfolio-metta">
-                  <a href="#"><i class="icon-pinterest"></i>3445</a>
-                <a href="#"><i class="icon-twitter"></i>98</a>
-                <a href="#"><i class="icon-facebook"></i>205</a>
-                <a href="#"><i class="icon-google-plus"></i>205</a>
-                </div>            
+                <a href="<%= product.url %>" class="zoom" target="_blank">zoom</a>       
                 <%= image_tag product.picture.url(:medium) %>
               </div>
             </li>

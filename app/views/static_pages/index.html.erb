@@ -114,13 +114,7 @@
                 [@categories.find(product.category_id), product] %>
               </h4>
             </div>
-            <a href="<%= product.url %>" class="zoom">zoom</a>
-            <div class="portfolio-metta">
-              <a href="#"><i class="icon-pinterest"></i>3445</a>
-              <a href="#"><i class="icon-twitter"></i>98</a>
-              <a href="#"><i class="icon-facebook"></i>205</a>
-              <a href="#"><i class="icon-google-plus"></i>205</a>
-            </div>            
+            <a href="<%= product.url %>" class="zoom">zoom</a>      
             <%= image_tag product.picture.url(:medium) %>
           </div>
         </li>

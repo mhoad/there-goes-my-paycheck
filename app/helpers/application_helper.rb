@@ -7,5 +7,9 @@ def require_login
   end
 end
 
+def latest_product(product)
+  product.created_at > 30.days.ago
+end
+
 end
   
