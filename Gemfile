@@ -34,6 +34,7 @@ gem 'jbuilder', '~> 1.2'
 gem 'simple_form'
 gem "devise", "~> 3.0.2"
 gem "will_paginate", "~> 3.0.4"
+gem "sitemap_generator", "~> 4.2.0"
 
 
 
