@@ -14,6 +14,7 @@
 #  picture_content_type :string(255)
 #  picture_file_size    :integer
 #  picture_updated_at   :datetime
+#  price                :decimal(, )
 #
 
 class Product < ActiveRecord::Base

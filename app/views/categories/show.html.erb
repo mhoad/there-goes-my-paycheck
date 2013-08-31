@@ -69,10 +69,10 @@
           <span class="caret"></span>
           </a>        
           <ul id="filters" class="dropdown-menu">
+            <li><a href="#" data-filter=".all">All items</a></li>
             <li><a href="#" data-filter=".latest">Latest items</a></li>
-            <li><a href="#" data-filter=".popular">Popular items</a></li>
-            <li><a href="#" data-filter=".premium">Premium items</a></li>
-            <li><a href="#" data-filter=".free">Free items</a></li>
+            <li><a href="#" data-filter=".premium">Expensive items</a></li>
+            <li><a href="#" data-filter=".cheap">Cheap items</a></li>
           </ul>
         </div> 
          
@@ -82,7 +82,7 @@
         <div class="clear"></div>
         <ul id="portfolio" class="row clearfix marginbot10">
           <% @products.each do |product| %>
-            <li class="item span3 <%= "latest" if latest_product(product)%>">
+            <li class="item span3 <%= get_product_tags(product)%>">
               <div class="image-wrapper">
                 <div class="image-caption"></div>
                 <div class="image-title">
