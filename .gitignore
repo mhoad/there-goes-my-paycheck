@@ -19,3 +19,6 @@ doc/
 .idea
 .secret
 bundler_stubs/
+
+#Ignore product image files
+public/system/
