@@ -1,5 +1,4 @@
 <!-- Start featured -->
-<% offset = rand(Product.count) %>
   <section id="featured" class="aligncenter">
     <div class="gridrotator">
       <div class="grid-wrapper">
@@ -14,6 +13,7 @@
       <div id="ri-grid" class="ri-grid ri-grid-size">
         <ul>
           <% 63.times do %>
+            <% offset = rand(1..Product.count) %>
             <% random_product = Product.limit(1).offset(offset) %>
               <li><a href="#">
                 <% if !random_product.first.nil? %>
