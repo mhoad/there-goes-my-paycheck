@@ -1,0 +1,30 @@
+<!-- Start featured -->
+<% offset = rand(Product.count) %>
+  <section id="featured" class="aligncenter">
+    <div class="gridrotator">
+      <div class="grid-wrapper">
+        <div class="container">
+          <div class="row">
+            <div class="span12">    
+              <h3>There Goes My Paycheck</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="ri-grid" class="ri-grid ri-grid-size">
+        <ul>
+          <% 63.times do %>
+            <% random_product = Product.limit(1).offset(offset) %>
+              <li><a href="#">
+                <% if !random_product.first.nil? %>
+                  <%= image_tag(random_product.first.picture(:medium)) %>
+                <% else %>
+                  <img src="http://placehold.it/1024x680.jpg" alt="" >
+                <% end %>
+              </a></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </section>
+<!-- End featured -->
