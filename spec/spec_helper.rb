@@ -1,5 +1,7 @@
 require 'simplecov'
-SimpleCov.start 'rails'
+SimpleCov.start 'rails' do
+  add_filter "product_pagination_helper"
+end
 
 require 'paperclip/matchers'
 

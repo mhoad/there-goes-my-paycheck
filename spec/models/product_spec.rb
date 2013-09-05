@@ -98,4 +98,10 @@ describe Product do
     expensive_product = Product.create(@attr.merge(:price => 200.00))
     expensive_product.tags.should include("premium")
   end
+
+  it "should not tag products without prices as 'premium' or 'cheap'" do
+    no_price_product = Product.create(@attr.merge(:price => nil))
+    no_price_product.tags.should_not include("premium")
+    no_price_product.tags.should_not include("cheap")
+  end
 end
