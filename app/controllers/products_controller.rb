@@ -27,6 +27,10 @@ class ProductsController < ApplicationController
   def edit
   end
 
+  def destroy
+    #TODO CREATE ABILITY TO DELETE PRODUCTS
+  end
+
   def update
     if @product.update(product_params)
       flash[:notice] = 'Product successfully updated'

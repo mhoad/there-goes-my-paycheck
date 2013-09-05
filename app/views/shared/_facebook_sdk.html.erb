@@ -7,7 +7,7 @@ window.fbAsyncInit = function() {
       status     : true,                                 // Check Facebook Login status
       xfbml      : true                                  // Look for social plugins on the page
     });
- 
+
   //Likes the page
   FB.Event.subscribe('edge.create', function(href, widget) {
     ga('send', {
@@ -18,7 +18,7 @@ window.fbAsyncInit = function() {
               'page': '<%= request.original_fullpath %>'
             });
   });
- 
+
   //Unlikes the page
   FB.Event.subscribe('edge.remove', function(href, widget) {
     ga('send', {
@@ -29,7 +29,7 @@ window.fbAsyncInit = function() {
               'page': '<%= request.original_fullpath %>'
             });
   });
- 
+
   //Send or Share The Page
   FB.Event.subscribe('message.send', function(href, widget) {
     ga('send', {
@@ -49,9 +49,9 @@ window.fbAsyncInit = function() {
       facebook_user(false);
      }
     });
- 
+
   };
- 
+
   // Load the SDK asynchronously
   (function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];

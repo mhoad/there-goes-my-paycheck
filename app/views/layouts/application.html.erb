@@ -20,8 +20,7 @@
 <%= render "shared/facebook_sdk" %>
 
   <%= render 'shared/flash_message' %>
-  <%= render "shared/header" %>
-  
+  <%= render "shared/header", :top_level_categories => @top_level_categories %>
   <%= yield %>
   <%= render "shared/footer" %>
 </body>

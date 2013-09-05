@@ -7,7 +7,7 @@
         <div class="boxed-wrapper">
           <ul itemprop="breadcrumb" class="breadcrumb">
             <li><span class="glyphicon glyphicon-home"></span> <%= link_to "Home", root_path %></li> &gt;
-            <% if !@category.parent_category.nil? %>              
+            <% if !@category.parent_category.nil? %>
               <li><%= link_to @category.parent_category.name, category_path(@category.parent_category) %></li> &gt;
             <% end %>
             <li><%= link_to @category.name, category_path(@category) %></li>  &gt;
@@ -19,7 +19,7 @@
               <h4>
                 <%= link_to @product.name, @product.url %>
               </h4>
-            </div>            
+            </div>
               <div class="flexslider median-object">
                <%= image_tag @product.picture.url %>
               </div>
@@ -33,21 +33,21 @@
             <div class="clearfix"></div>
               <div class="comment-head">
                 <h4>Leave a Comment</h4>
-              </div>              
+              </div>
               <div class="comment-wrapper">
                 <div id="fb-root"></div>
-                
+
                 <div class="fb-comments" data-href="http://example.com" data-width="840" num_posts="20"></div>
-              </div>              
+              </div>
           </div>
           <aside>
             <div class="widget">
-              <%= link_to "Buy Product", @product.url, 
+              <%= link_to "Buy Product", @product.url,
                   :class => "btn btn-large btn-block btn-primary" %>
               <p><strong><i class="icon-link"></i> Via :</strong>
                 <%= link_to Addressable::URI.parse(@product.url).host, @product.url %>
-              </p>        
-            </div>  
+              </p>
+            </div>
             <div class="widget">
               <h4 class="widget-head">Share This Product</h4>
               <iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Freference%2Fplugins%2Flike&amp;width=450&amp;height=80&amp;colorscheme=light&amp;layout=standard&amp;action=like&amp;show_faces=true&amp;send=true&amp;appId=150522361798975" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:250px; height:80px;" allowTransparency="true"></iframe>
@@ -59,7 +59,7 @@
               <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
 
               <div class="g-follow" data-href="https://plus.google.com/103609000063103074517" data-rel="publisher"></div>
-            </div>            
+            </div>
           </aside>
         </div>
        </div>

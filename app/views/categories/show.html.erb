@@ -18,7 +18,7 @@
                 <li><%= link_to category.name, category_path(category) %></li>
                 <% category.subcategories.each do |sub_category| %>
                   <% if @category.name == sub_category.name %>
-                    <li class="active"><a href="#"><%= sub_category.name %></a></li> 
+                    <li class="active"><a href="#"><%= sub_category.name %></a></li>
                     <% elsif sub_category.parent_id == @category.parent_id %>
                       <li><%= link_to sub_category.name, category_path(sub_category) %></li>
                   <% end %>
@@ -30,13 +30,13 @@
       </div>
 
       <div class="span9">
-        
+
         <div class="marginbot35">
 
           <h3><%= @category.name %></h3>
           <ul itemprop="breadcrumb" class="breadcrumb">
             <li><span class="glyphicon glyphicon-home"></span> <%= link_to "Home", root_path %></li> &gt;
-            <% if !@category.parent_category.nil? %>              
+            <% if !@category.parent_category.nil? %>
               <li><%= link_to @category.parent_category.name, category_path(@category.parent_category) %></li> &gt;
             <% end %>
             <li class="active"><%= @category.name %></li>
@@ -44,24 +44,24 @@
           <% if user_signed_in? %>
           <p>
             <%= link_to('Delete category', category_path, :method => :delete) %> |
-            <%= link_to('Edit category', edit_category_path) %> 
-          </p>        
+            <%= link_to('Edit category', edit_category_path) %>
+          </p>
           <% end %>
           <%= @category.description %>
-        </div>      
+        </div>
         <div id="filter-bar" class="btn-group">
           <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
           Sort item by
           <span class="caret"></span>
-          </a>        
+          </a>
           <ul id="filters" class="dropdown-menu">
             <li><a href="#" data-filter=".all">All items</a></li>
             <li><a href="#" data-filter=".latest">Latest items</a></li>
             <li><a href="#" data-filter=".premium">Expensive items</a></li>
             <li><a href="#" data-filter=".cheap">Cheap items</a></li>
           </ul>
-        </div> 
-         
+        </div>
+
         <span class="page-count">
           <%= page_entries_info @products %>
           </span>
@@ -76,7 +76,7 @@
                     <%= link_to product.name, [@category, product] %>
                   </h4>
                 </div>
-                <a href="<%= product.url %>" class="zoom" target="_blank">zoom</a>       
+                <a href="<%= product.url %>" class="zoom" target="_blank">zoom</a>
                 <%= image_tag product.picture.url(:medium) %>
               </div>
             </li>
@@ -84,11 +84,11 @@
         </ul>
         <div class="row">
         <div class="span9">
-         
-          <%= will_paginate @products, :page_links => false, 
-          :renderer => ProductPaginationHelper::LinkRenderer, 
+
+          <%= will_paginate @products, :page_links => false,
+          :renderer => ProductPaginationHelper::LinkRenderer,
           :class => 'pager marginnone' %>
-          
+
         </div>
       </div>
       </div>

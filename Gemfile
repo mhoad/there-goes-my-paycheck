@@ -14,6 +14,7 @@ group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'annotate', '>=2.5.0'
+  gem 'rails_best_practices'
 end
 
 group :test do

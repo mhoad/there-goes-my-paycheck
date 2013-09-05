@@ -11,7 +11,7 @@ SitemapGenerator::Sitemap.create do
   end
 
   Product.find_each do |product|
-    add category_product_path(Category.find(product.category_id), product), 
+    add category_product_path(Category.find(product.category_id), product),
     :lastmod => product.updated_at
   end
 

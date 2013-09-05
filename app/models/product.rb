@@ -22,7 +22,7 @@ class Product < ActiveRecord::Base
   friendly_id :name, use: :slugged
 
   has_attached_file :picture, :styles => { :medium => "640x480>" }
-  
+
   belongs_to :category
 
   VALID_URL_REGEX = /\A^(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(([0-9]{1,5})?\/.*)?$\z/ix
@@ -33,7 +33,7 @@ class Product < ActiveRecord::Base
   validates :name, presence: true
   validates :description, :length => {
     :minimum   => 30,
-    :tokenizer => lambda { |str| str.scan(/\w+/) }, 
+    :tokenizer => lambda { |str| str.scan(/\w+/) },
     :too_short => "must have at least %{count} words"
   } # 50 word count minimum description
   validates :url, presence: true, format: { with: VALID_URL_REGEX }
@@ -45,7 +45,7 @@ class Product < ActiveRecord::Base
     product_tags << "latest "     if is_latest_product?
     return product_tags.strip
   end
-  
+
   private
     def is_latest_product?
       self.created_at > 30.days.ago

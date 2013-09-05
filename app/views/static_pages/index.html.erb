@@ -9,16 +9,16 @@
           <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
           Sort item by
           <span class="caret"></span>
-          </a>        
+          </a>
           <ul id="filters" class="dropdown-menu">
             <li><a href="#" data-filter=".all">All items</a></li>
             <li><a href="#" data-filter=".latest">Latest items</a></li>
             <li><a href="#" data-filter=".premium">Expensive items</a></li>
             <li><a href="#" data-filter=".cheap">Cheap items</a></li>
           </ul>
-        </div>  
+        </div>
         <span class="page-count"><%= page_entries_info @products %></span>
-      </div>      
+      </div>
       </div>
       <ul id="portfolio" class="row clearfix marginbot10">
         <% @products.each do |product| %>
@@ -27,23 +27,23 @@
             <div class="image-caption"></div>
             <div class="image-title">
               <h4>
-                <%= link_to product.name, 
+                <%= link_to product.name,
                 [@categories.find(product.category_id), product] %>
               </h4>
             </div>
-            <a href="<%= product.url %>" class="zoom">zoom</a>      
+            <a href="<%= product.url %>" class="zoom">zoom</a>
             <%= image_tag product.picture.url(:medium) %>
           </div>
         </li>
         <% end %>
-      </ul> 
+      </ul>
       <div class="row">
         <div class="span12">
-         
-          <%= will_paginate @products, :page_links => false, 
-          :renderer => ProductPaginationHelper::LinkRenderer, 
+
+          <%= will_paginate @products, :page_links => false,
+          :renderer => ProductPaginationHelper::LinkRenderer,
           :class => 'pager marginnone' %>
-          
+
         </div>
       </div>
     </div>
