@@ -22,7 +22,7 @@
       </div>
       <ul id="portfolio" class="row clearfix marginbot10">
         <% @products.each do |product| %>
-        <li class="item span4 <%= get_product_tags(product)%>">
+          <li class="item span4 <%= product.tags %>
           <div class="image-wrapper">
             <div class="image-caption"></div>
             <div class="image-title">

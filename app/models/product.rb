@@ -37,4 +37,33 @@ class Product < ActiveRecord::Base
     :too_short => "must have at least %{count} words"
   } # 50 word count minimum description
   validates :url, presence: true, format: { with: VALID_URL_REGEX }
+
+  def tags
+    product_tags = "all "
+    product_tags << "premium "    if is_expensive_product?
+    product_tags << "cheap "      if is_cheap_product?
+    product_tags << "latest "     if is_latest_product?
+    return product_tags.strip
+  end
+  
+  private
+    def is_latest_product?
+      self.created_at > 30.days.ago
+    end
+
+    def is_expensive_product?
+      if self.price.nil?
+        return false
+      else
+        return true if self.price >= 100
+      end
+    end
+
+    def is_cheap_product?
+      if self.price.nil?
+        return false
+      else
+        return true if self.price < 100
+      end
+    end
 end

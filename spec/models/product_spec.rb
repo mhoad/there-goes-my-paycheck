@@ -31,7 +31,8 @@ describe Product do
       Jowl tenderloin venison filet mignon ham ham hock.",
       :url => "http://www.sampleproduct.com/",
       :picture => File.open(Rails.root.join("spec", "factories", 
-                                            "images", "1024x680.jpg"))
+                                            "images", "1024x680.jpg")),
+      :price => 40.00
     }
   end
 
@@ -91,5 +92,10 @@ describe Product do
       :picture => File.open(Rails.root.join("spec", "factories", "images", picture))))
       valid_picture_product.should be_valid
     end
+  end
+
+  it "should tag expensive items as 'premium'" do
+    expensive_product = Product.create(@attr.merge(:price => 200.00))
+    expensive_product.tags.should include("premium")
   end
 end

@@ -13,5 +13,6 @@ FactoryGirl.define do
                 tri-tip pork loin."
     url "http://www.example.com/"
     picture File.new(Rails.root + 'spec/factories/images/1024x680.jpg')
+    price 40.00
   end
 end

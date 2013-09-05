@@ -68,7 +68,7 @@
         <div class="clear"></div>
         <ul id="portfolio" class="row clearfix marginbot10">
           <% @products.each do |product| %>
-            <li class="item span3 <%= get_product_tags(product)%>">
+            <li class="item span3 <%= product.tags %>">
               <div class="image-wrapper">
                 <div class="image-caption"></div>
                 <div class="image-title">
