@@ -13,10 +13,10 @@
             <li><%= link_to @category.name, category_path(@category) %></li>  &gt;
             <li class="active"><%= @product.name %></li>
           </ul>
-          <div class="article-wrapper">
+          <div class="article-wrapper" itemscope itemtype="http://schema.org/Product">
             <article>
             <div class="post-headline">
-              <h4>
+              <h4 itemprop="name">
                 <%= link_to @product.name, @product.url %>
               </h4>
               <% if user_signed_in? %>
@@ -27,11 +27,11 @@
             <% end %>
             </div>
               <div class="flexslider median-object">
-               <%= image_tag @product.picture.url %>
+                <%= image_tag( @product.picture.url, { :itemprop => "image" }) %>
               </div>
               <div class="post-contain">
                 <h4>Description :</h4>
-                <p>
+                <p itemprop="description">
                 <%= @product.description %>
                 </p>
               </div>
