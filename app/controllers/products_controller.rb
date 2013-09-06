@@ -28,7 +28,9 @@ class ProductsController < ApplicationController
   end
 
   def destroy
-    #TODO CREATE ABILITY TO DELETE PRODUCTS
+    @product.destroy
+    flash[:notice] = 'Product sucessfully deleted'
+    redirect_to categories_path
   end
 
   def update

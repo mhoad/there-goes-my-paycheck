@@ -52,4 +52,15 @@ feature 'Editing Products' do
     expect(page).to have_content('You must be logged in')
     expect(page).to_not have_content('Edit Product')
   end
+
+  scenario 'Edit product link should appear on product page for admin users' do
+    visit category_product_path(category, product)
+    expect(page).to have_link('Edit Product')
+  end
+
+  scenario 'Edit product link should not appear on page for regular users' do
+    click_link "Logout"
+    visit category_product_path(category, product)
+    expect(page).to_not have_link('Edit Product')
+  end
 end

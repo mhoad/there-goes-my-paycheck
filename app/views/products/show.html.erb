@@ -19,6 +19,12 @@
               <h4>
                 <%= link_to @product.name, @product.url %>
               </h4>
+              <% if user_signed_in? %>
+                <%= link_to "Delete Product",
+                  [@category, @product], :method => :delete,
+                  data: { confirm: "Are you sure you want to delete this?" } %>
+                 | <%= link_to "Edit Product", [:edit, @category, @product] %>
+            <% end %>
             </div>
               <div class="flexslider median-object">
                <%= image_tag @product.picture.url %>
