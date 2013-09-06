@@ -1,63 +1,66 @@
-<script type="text/javascript">
-window.fbAsyncInit = function() {
-    // init the FB JS SDK
-    FB.init({
-      appId      : '<%= ENV["FACEBOOK_APP_ID"] %>',
-      channelUrl : '<%= url_for( :controller => '/static_pages', :action => 'facebook_channel', :only_path => false )%>',
-      status     : true,                                 // Check Facebook Login status
-      xfbml      : true                                  // Look for social plugins on the page
+<% if ENV["FACEBOOK_APP_ID"].present? %>
+
+  <script type="text/javascript">
+  window.fbAsyncInit = function() {
+      // init the FB JS SDK
+      FB.init({
+        appId      : '<%= ENV["FACEBOOK_APP_ID"] %>',
+        channelUrl : '<%= url_for( :controller => '/static_pages', :action => 'facebook_channel', :only_path => false )%>',
+        status     : true,                                 // Check Facebook Login status
+        xfbml      : true                                  // Look for social plugins on the page
+      });
+
+    //Likes the page
+    FB.Event.subscribe('edge.create', function(href, widget) {
+      ga('send', {
+                'hitType': 'social',
+                'socialNetwork': 'Facebook',
+                'socialAction': 'Like',
+                'socialTarget': '<%= canonical_url %>',
+                'page': '<%= request.original_fullpath %>'
+                });
+      });
+
+    //Unlikes the page
+    FB.Event.subscribe('edge.remove', function(href, widget) {
+      ga('send', {
+                'hitType': 'social',
+                'socialNetwork': 'Facebook',
+                'socialAction': 'Unlike',
+                'socialTarget': '<%= canonical_url %>',
+                'page': '<%= request.original_fullpath %>'
+                });
     });
 
-  //Likes the page
-  FB.Event.subscribe('edge.create', function(href, widget) {
-    ga('send', {
-              'hitType': 'social',
-              'socialNetwork': 'Facebook',
-              'socialAction': 'Like',
-              'socialTarget': '<%= canonical_url %>',
-              'page': '<%= request.original_fullpath %>'
-            });
-  });
-
-  //Unlikes the page
-  FB.Event.subscribe('edge.remove', function(href, widget) {
-    ga('send', {
-              'hitType': 'social',
-              'socialNetwork': 'Facebook',
-              'socialAction': 'Unlike',
-              'socialTarget': '<%= canonical_url %>',
-              'page': '<%= request.original_fullpath %>'
-            });
-  });
-
-  //Send or Share The Page
-  FB.Event.subscribe('message.send', function(href, widget) {
-    ga('send', {
-              'hitType': 'social',
-              'socialNetwork': 'Facebook',
-              'socialAction': 'Send',
-              'socialTarget': '<%= canonical_url %>',
-              'page': '<%= request.original_fullpath %>'
-            });
-  });
-
-  FB.getLoginStatus(function(response) {
-     if (response.status !== "unknown")
-     {
-      facebook_user(true);
-     }else{
-      facebook_user(false);
-     }
+    //Send or Share The Page
+    FB.Event.subscribe('message.send', function(href, widget) {
+      ga('send', {
+                'hitType': 'social',
+                'socialNetwork': 'Facebook',
+                'socialAction': 'Send',
+                'socialTarget': '<%= canonical_url %>',
+                'page': '<%= request.original_fullpath %>'
+                });
     });
 
-  };
+    FB.getLoginStatus(function(response) {
+       if (response.status !== "unknown")
+      {
+        facebook_user(true);
+       }else{
+        facebook_user(false);
+       }
+      });
 
-  // Load the SDK asynchronously
-  (function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1&#038;appId=<%= ENV["FACEBOOK_APP_ID"] %>";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));
-</script>
+    };
+
+    // Load the SDK asynchronously
+    (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1&#038;appId=<%= ENV["FACEBOOK_APP_ID"] %>";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+  </script>
+<% end %>
