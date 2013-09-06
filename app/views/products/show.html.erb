@@ -34,6 +34,9 @@
                 <%= image_tag( @product.picture.url, { :itemprop => "image" }) %>
               </div>
               <div class="post-contain">
+                <div class="fb-like" data-href="<%= canonical_url %>" data-width="450" data-layout="box_count" data-show-faces="false" data-send="false"></div>
+                <div class="g-plusone" data-size="tall" data-href="<%= canonical_url %>"  ></div>
+                <a href="https://twitter.com/share" class="twitter-share-button" data-lang="en" data-count="vertical" data-related="<%= ENV["TWITTER_SITE"] %>" data-via="<%= ENV["TWITTER_CREATOR"] %>" data-url="<%= canonical_url %>">Tweet</a>
                 <h4>Description :</h4>
                 <p itemprop="description">
                 <%= @product.description %>
@@ -59,14 +62,12 @@
               </p>
             </div>
             <div class="widget">
-              <h4 class="widget-head">Share This Product</h4>
-              <iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Freference%2Fplugins%2Flike&amp;width=450&amp;height=80&amp;colorscheme=light&amp;layout=standard&amp;action=like&amp;show_faces=true&amp;send=true&amp;appId=150522361798975" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:250px; height:80px;" allowTransparency="true"></iframe>
+              
               <h4 class="widget-head">Follow Us</h4>
               <iframe src="//www.facebook.com/plugins/follow.php?href=https%3A%2F%2Fwww.facebook.com%2Fzuck&amp;width=450&amp;height=80&amp;colorscheme=light&amp;layout=standard&amp;show_faces=true&amp;appId=150522361798975" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:250px; height:80px;" allowTransparency="true"></iframe>
 
               <a href="https://twitter.com/mdhoad" class="twitter-follow-button" data-show-count="false">Follow @mdhoad</a>
               <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-              <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
 
               <div class="g-follow" data-href="https://plus.google.com/103609000063103074517" data-rel="publisher"></div>
             </div>

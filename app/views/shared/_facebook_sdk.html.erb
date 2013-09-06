@@ -32,6 +32,28 @@
                 });
     });
 
+    //Leaves a comment on the page
+    FB.Event.subscribe('comment.create', function(href, widget) {
+      ga('send', {
+                'hitType': 'social',
+                'socialNetwork': 'Facebook',
+                'socialAction': 'Comment',
+                'socialTarget': '<%= canonical_url %>',
+                'page': '<%= request.original_fullpath %>'
+                });
+    });
+
+    //Deletes a comment on the page
+    FB.Event.subscribe('comment.remove', function(href, widget) {
+      ga('send', {
+                'hitType': 'social',
+                'socialNetwork': 'Facebook',
+                'socialAction': 'Delete Comment',
+                'socialTarget': '<%= canonical_url %>',
+                'page': '<%= request.original_fullpath %>'
+                });
+    });
+
     //Send or Share The Page
     FB.Event.subscribe('message.send', function(href, widget) {
       ga('send', {
