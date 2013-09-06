@@ -589,6 +589,11 @@
         1,
         null,
         null,
+        1,
+        0,
+        0,
+        null,
+        null,
         null
       ],
       "/Users/Mark/Code/rails/there-goes-my-paycheck/app/models/product.rb": [
@@ -663,6 +668,6 @@
         null
       ]
     },
-    "timestamp": 1378469721
+    "timestamp": 1378478765
   }
 }
