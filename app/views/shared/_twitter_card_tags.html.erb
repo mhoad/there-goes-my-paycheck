@@ -1,0 +1,14 @@
+<% content_for :twitter_cards do %>
+  <% if card.present? %>
+    <meta name="twitter:card" content="<%= card %>">
+  <% end %>
+  <% if title.present? %>
+    <meta name="twitter:title" content="<%= title %>">
+  <% end %>
+  <% if description.present? %>
+    <meta name="twitter:description" content="<%= description %>">
+  <% end %>
+  <% if image.present? %>
+    <meta name="twitter:image" content="<%= image %>">
+  <% end %>
+<% end %>

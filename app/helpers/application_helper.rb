@@ -19,4 +19,10 @@ module ApplicationHelper
       :title => title, :type => type, :image => image,
       :url => url, :description => description
   end
+
+  def twitter_cards(card: nil, title: nil, description: nil, image: nil)
+    render "shared/twitter_card_tags",
+      :card => card, :title => title, :description => description,
+      :image => image
+  end
 end

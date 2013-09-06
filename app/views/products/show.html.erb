@@ -1,4 +1,5 @@
-
+<% twitter_cards(title: @product.name, description: @product.description,
+                 image: @product.picture.url) %>
 <% open_graph_tags(title: @product.name, type: "article",
                    image: @product.picture.url, url: @product.url,
                    description: @product.description) %>
