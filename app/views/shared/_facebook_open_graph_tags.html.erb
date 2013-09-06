@@ -1,0 +1,17 @@
+<% content_for :open_graph do %>
+  <% if title.present? %> 
+    <meta property="og:title" content="<%= title %>">
+  <% end %>
+  <% if type.present? %>
+    <meta property="og:type" content="<%= type %>">
+  <% end %>
+  <% if image.present? %>
+    <meta property="og:image" content="<%= image %>">
+  <% end %>
+  <% if url.present? %>
+    <meta property="og:url" content="<%= url %>">
+  <% end %>
+  <% if description.present? %>
+    <meta property="og:description" content="<%= description %>">
+  <% end %>
+<% end %>

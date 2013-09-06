@@ -77,6 +77,13 @@
         null,
         11,
         null,
+        null,
+        1,
+        null,
+        10,
+        null,
+        null,
+        null,
         null
       ],
       "/Users/Mark/Code/rails/there-goes-my-paycheck/app/helpers/products_helper.rb": [
@@ -317,7 +324,7 @@
         null
       ]
     },
-    "timestamp": 1378449855
+    "timestamp": 1378453957
   },
   "Cucumber Features": {
     "coverage": {

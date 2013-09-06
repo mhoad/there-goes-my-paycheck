@@ -12,4 +12,11 @@ module ApplicationHelper
                 "Tell your friends" ]
     tagline.sample
   end
+
+  def open_graph_tags(title: nil, type: nil, image: nil,
+                      url: nil, description: nil)
+    render "shared/facebook_open_graph_tags",
+      :title => title, :type => type, :image => image,
+      :url => url, :description => description
+  end
 end
