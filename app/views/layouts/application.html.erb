@@ -19,11 +19,11 @@
   <%= yield :twitter_cards %>
 </head>
 <body itemscope itemtype="http://schema.org/WebPage">
-<%= render "shared/facebook_sdk" %>
 
   <%= render 'shared/flash_message' %>
   <%= render "shared/header", :top_level_categories => @top_level_categories %>
   <%= yield %>
   <%= render "shared/footer" %>
-</body>
+  <%= render "shared/facebook_sdk" %>
+  </body>
 </html>
