@@ -1,4 +1,7 @@
 <% content_for :open_graph do %>
+  <% if ENV["FACEBOOK_APP_ID"].present? %>
+    <meta property="fb:app_id" content="ENV["FACEBOOK_APP_ID"]">
+  <% end %>
   <% if title.present? %> 
     <meta property="og:title" content="<%= title %>">
   <% end %>

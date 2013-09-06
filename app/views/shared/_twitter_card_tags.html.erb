@@ -1,4 +1,10 @@
 <% content_for :twitter_cards do %>
+  <%if ENV["TWITTER_SITE"].present? %>
+    <meta name="twitter:site" content="@<%= ENV["TWITTER_SITE"] %>">
+  <% end %>
+  <% if ENV["TWITTER_CREATOR"].present? %>
+    <meta name="twitter:creator" content="@<%= ENV["TWITTER_CREATOR"] %> ">
+  <% end %>
   <% if card.present? %>
     <meta name="twitter:card" content="<%= card %>">
   <% end %>
