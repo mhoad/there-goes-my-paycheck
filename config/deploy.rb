@@ -17,6 +17,7 @@ ssh_options[:forward_agent] = true
 set :port, 1337
 set :default_run_options, {:pty => true}
 
+after "deploy", "deploy:cleanup" # keep only the last 5 releases
 
 # If you are using Passenger mod_rails uncomment this:
 namespace :deploy do
@@ -27,8 +28,11 @@ namespace :deploy do
  end
 
  task :setup_config, roles: :app do
-    run "cp -f config/database.example.yml #{release_path}/config/database.yml"
-    run "cp -f config/application.example.yml #{release_path}/config/application.yml"
+    run "mkdir -p #{shared_path}/config"
+    put File.read("./config/database.example.yml"), "#{shared_path}/config/database.yml"
+    put File.read("./config/application.example.yml"), "#{shared_path}/config/application.yml"
+    #run "cp -f config/database.example.yml #{release_path}/config/database.yml"
+    #run "cp -f config/application.example.yml #{release_path}/config/application.yml"
   end
   after "deploy:setup", "deploy:setup_config"
 
