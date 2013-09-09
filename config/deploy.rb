@@ -27,9 +27,8 @@ namespace :deploy do
  end
 
  task :setup_config, roles: :app do
-    run "cp -f ~/database.yml #{release_path}/config/database.yml"
-    run "cp -f ~/application.yml #{release_path}/config/application.yml"
-    puts "Now edit the config files in #{shared_path}."
+    run "cp -f config/database.example.yml #{release_path}/config/database.yml"
+    run "cp -f config/application.example.yml #{release_path}/config/application.yml"
   end
   after "deploy:setup", "deploy:setup_config"
 
