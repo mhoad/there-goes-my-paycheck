@@ -8,6 +8,8 @@ group :development, :test do
   gem 'rspec-rails', '~> 2.14.0'
   gem 'guard-rspec', '~> 3.0.2'
   gem 'factory_girl_rails', '~> 4.2.1'
+  gem 'rvm-capistrano'
+  gem "capistrano", "~> 2.15.5"
 end
 
 group :development do
@@ -38,7 +40,7 @@ gem 'will_paginate', '~> 3.0.4'
 gem 'sitemap_generator', '~> 4.2.0'
 gem 'friendly_id', '5.0.0.beta4'
 gem "paperclip", "~> 3.5.1"
-gem "capistrano", "~> 2.15.5"
+
 
 
 
