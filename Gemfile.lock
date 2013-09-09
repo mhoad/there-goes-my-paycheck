@@ -251,6 +251,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  addressable (~> 2.3.5)
   annotate (>= 2.5.0)
   better_errors
   binding_of_caller

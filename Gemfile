@@ -40,6 +40,7 @@ gem 'will_paginate', '~> 3.0.4'
 gem 'sitemap_generator', '~> 4.2.0'
 gem 'friendly_id', '5.0.0.beta4'
 gem "paperclip", "~> 3.5.1"
+gem "addressable", "~> 2.3.5"
 
 
 

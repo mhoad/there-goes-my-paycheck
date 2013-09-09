@@ -29,8 +29,9 @@ namespace :deploy do
 
  task :setup_config, roles: :app do
     run "mkdir -p #{shared_path}/config"
-    put File.read("./config/database.example.yml"), "#{shared_path}/config/database.yml"
-    put File.read("./config/application.example.yml"), "#{shared_path}/config/application.yml"
+    #put File.read("~/database.yml"), "#{shared_path}/config/database.yml"
+    #put File.read("~/application.yml"), "#{shared_path}/config/application.yml"
+    
     #run "cp -f config/database.example.yml #{release_path}/config/database.yml"
     #run "cp -f config/application.example.yml #{release_path}/config/application.yml"
   end
