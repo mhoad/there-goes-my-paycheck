@@ -31,7 +31,7 @@
                 [@categories.find(product.category_id), product] %>
               </h4>
             </div>
-            <a href="<%= product.url %>" class="zoom">zoom</a>
+            <a href="<%= product.url %>" class="zoom" data-name="<%= product.name %>" data-category="<%= product.category.name %>" target="_blank">zoom</a>
             <%= image_tag product.picture.url(:medium) %>
           </div>
         </li>
@@ -47,5 +47,26 @@
         </div>
       </div>
     </div>
+    <% if ENV["GOOGLE_UNIVERSAL_ANALYTICS_ID"].present? %>
+      <script type="text/javascript">
+        gaGoalTracking();
+
+        function gaGoalTracking() {
+            // Set goal using jQuery onclick event.
+            if( window.$ ) {
+                $('.zoom').on('click', function() {
+                  var product_name = $(this).attr('data-name');
+                  var product_category = $(this).attr('data-category');
+                  ga('send', 'event', 'thumbnail', 'external click', {
+                    'dimension1': product_name,
+                    'dimension2': product_category });
+                });
+            } else {
+                // wait 50 milliseconds and try again.
+                window.setTimeout( gaGoalTracking, 50 );
+            }
+        }
+      </script>
+    <% end %>
   </section>
   <!-- End contain -->
