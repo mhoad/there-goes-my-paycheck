@@ -56,10 +56,30 @@
           <aside>
             <div class="widget">
               <%= link_to "Buy Product", @product.url,
-                  :class => "btn btn-large btn-block btn-primary" %>
+                  :class => "btn btn-large btn-block btn-primary", :id => "buy-button", :target => "_blank" %>
               <p><strong><i class="icon-link"></i> Via :</strong>
                 <%= link_to Addressable::URI.parse(@product.url).host, @product.url %>
               </p>
+
+              <% if ENV["GOOGLE_UNIVERSAL_ANALYTICS_ID"].present? %>
+                <script type="text/javascript">
+                  gaGoalTracking();
+
+                  function gaGoalTracking() {
+                      // Set goal using jQuery onclick event.
+                      if( window.$ ) {
+                          $('#buy-button').on('click', function() {
+                            ga('send', 'event', 'thumbnail', 'external click', {
+                              'dimension1': '<%= @product.name %>',
+                              'dimension2': '<%= @product.category.name %>' });
+                          });
+                      } else {
+                          // wait 50 milliseconds and try again.
+                          window.setTimeout( gaGoalTracking, 50 );
+                      }
+                  }
+                </script>
+              <% end %>
             </div>
             <div class="widget">
               
