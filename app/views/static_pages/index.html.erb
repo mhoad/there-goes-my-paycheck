@@ -47,26 +47,6 @@
         </div>
       </div>
     </div>
-    <% if ENV["GOOGLE_UNIVERSAL_ANALYTICS_ID"].present? %>
-      <script type="text/javascript">
-        gaGoalTracking();
-
-        function gaGoalTracking() {
-            // Set goal using jQuery onclick event.
-            if( window.$ ) {
-                $('.zoom').on('click', function() {
-                  var product_name = $(this).attr('data-name');
-                  var product_category = $(this).attr('data-category');
-                  ga('send', 'event', 'thumbnail', 'external click', {
-                    'dimension1': product_name,
-                    'dimension2': product_category });
-                });
-            } else {
-                // wait 50 milliseconds and try again.
-                window.setTimeout( gaGoalTracking, 50 );
-            }
-        }
-      </script>
-    <% end %>
+    <%= render "shared/product_thumbnail_event_tracking" %>
   </section>
   <!-- End contain -->
