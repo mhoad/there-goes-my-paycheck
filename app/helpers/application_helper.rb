@@ -13,20 +13,6 @@ module ApplicationHelper
     tagline.sample
   end
 
-  def open_graph_tags(title: nil, type: nil, image: nil,
-                      url: nil, description: nil)
-    render "shared/facebook_open_graph_tags",
-      :title => title, :type => type, :image => image,
-      :url => url, :description => description
-  end
-
-  def twitter_cards(card: "summary", title: nil, 
-                    description: nil, image: nil)
-    render "shared/twitter_card_tags",
-      :card => card, :title => title, :description => description,
-      :image => image
-  end
-
   def canonical_url
     url_for(:page => params[:page], :only_path => false)
   end
