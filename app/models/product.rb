@@ -24,8 +24,12 @@ class Product < ActiveRecord::Base
   belongs_to :category
 
   has_attached_file :picture, :styles => { :medium => "640x480>" }
+  has_attached_file :social_image
 
   validates_attachment :picture, :presence => true,
+  :content_type => { :content_type => ["image/jpeg", "image/jpg", "image/png"] }
+
+  validates_attachment :social_image, :presence => true,
   :content_type => { :content_type => ["image/jpeg", "image/jpg", "image/png"] }
 
   VALID_URL_REGEX = /\A^(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(([0-9]{1,5})?\/.*)?$\z/ix

@@ -32,6 +32,8 @@ describe Product do
       :url => "http://www.sampleproduct.com/",
       :picture => File.open(Rails.root.join("spec", "factories", 
                                             "images", "1024x680.jpg")),
+      :social_image => File.open(Rails.root.join("spec", "factories", 
+                                            "images", "1024x680.jpg")),
       :price => 40.00
     }
   end
@@ -89,7 +91,8 @@ describe Product do
                       "1024x680.png"]
     valid_pictures.each do |picture|
       valid_picture_product = Product.new(@attr.merge(
-      :picture => File.open(Rails.root.join("spec", "factories", "images", picture))))
+      :picture => File.open(Rails.root.join("spec", "factories", "images", picture)),
+      :social_image => File.open(Rails.root.join("spec", "factories", "images", picture))))
       valid_picture_product.should be_valid
     end
   end

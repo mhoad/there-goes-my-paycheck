@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130905164625) do
+ActiveRecord::Schema.define(version: 20131012152811) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -54,6 +54,10 @@ ActiveRecord::Schema.define(version: 20130905164625) do
     t.integer  "picture_file_size"
     t.datetime "picture_updated_at"
     t.decimal  "price"
+    t.string   "social_image_file_name"
+    t.string   "social_image_content_type"
+    t.integer  "social_image_file_size"
+    t.datetime "social_image_updated_at"
   end
 
   add_index "products", ["category_id"], name: "index_products_on_category_id", using: :btree

@@ -23,6 +23,7 @@ feature 'Creating Products' do
     fill_in 'product_description',  with: 'Lorem ipsum' * 30
     fill_in 'product_url',          with: 'http://www.example.com/'
     page.attach_file 'product_picture', file_path
+    page.attach_file 'product_social_image', file_path
     
     expect { click_button submit }.to change(Product, :count).by(1)
     expect(page).to have_content('Product successfully created')
