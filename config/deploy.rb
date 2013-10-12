@@ -3,7 +3,6 @@ require "bundler/capistrano"
 
 server "192.241.210.187", :app, :web, :db, :primary => true
 
- 
 set :application, "there-goes-my-paycheck"
 set :user, "application"
 set :scm, :git
@@ -12,7 +11,7 @@ set :deploy_to, "/home/#{user}/apps/#{application}"
 set :branch, "deployment"
 set :scm_passphrase, ""
 set :use_sudo, false
- 
+
 ssh_options[:forward_agent] = true
 set :port, 1337
 set :default_run_options, {:pty => true}
@@ -31,7 +30,6 @@ namespace :deploy do
     run "mkdir -p #{shared_path}/config"
     #put File.read("~/database.yml"), "#{shared_path}/config/database.yml"
     #put File.read("~/application.yml"), "#{shared_path}/config/application.yml"
-    
     #run "cp -f config/database.example.yml #{release_path}/config/database.yml"
     #run "cp -f config/application.example.yml #{release_path}/config/application.yml"
   end

@@ -14,13 +14,13 @@ module CategoriesHelper
                     :site         => ENV["TWITTER_SITE"],
                     :creator      => ENV["TWITTER_CREATOR"]
                   }
-    #Set the appropriate pagination values for search engines if required             
+    #Set the appropriate pagination values for search engines if required
     set_meta_tags :next => products.next_page if products.next_page
     set_meta_tags :prev => products.previous_page if products.previous_page
   end
 
   private
-    def title_tag(category) 
+    def title_tag(category)
       return category.name if category.parent_category.nil?
       return "#{category.name} - #{category.parent_category.name}"
     end

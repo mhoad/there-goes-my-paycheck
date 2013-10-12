@@ -5,8 +5,8 @@ class StaticPagesController < ApplicationController
     @categories = Category.all
     set_meta_tags :title => 'Unique Gifts and Products',
                   :description => 'Write some awesome description here'
-    
-    #Set the appropriate pagination values for search engines if required             
+
+    #Set the appropriate pagination values for search engines if required
     set_meta_tags :next => @products.next_page if @products.next_page
     set_meta_tags :prev => @products.previous_page if @products.previous_page
   end
