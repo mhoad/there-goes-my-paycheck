@@ -34,3 +34,6 @@ brakeman_output.html
 /public/system/products*.gif
 /public/system/products*.jpg
 /public/system/products*.jpeg
+
+#Ignore XML Sitemap Files
+/public/*.xml.gz
