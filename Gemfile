@@ -43,6 +43,8 @@ gem 'friendly_id', '5.0.0.beta4'
 gem "paperclip", "~> 3.5.1"
 gem "addressable", "~> 2.3.5"
 gem 'meta-tags', '1.5.0', require: 'meta_tags'
+gem "aws-sdk", "~> 1.21.0"
+gem 'rubyzip', '~> 0.9.9'
 
 group :doc do
   gem 'sdoc', '0.3.20', require: false

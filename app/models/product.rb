@@ -21,14 +21,14 @@ class Product < ActiveRecord::Base
   extend FriendlyId
   friendly_id :name, use: :slugged
 
-  has_attached_file :picture, :styles => { :medium => "640x480>" }
-
   belongs_to :category
 
-  VALID_URL_REGEX = /\A^(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(([0-9]{1,5})?\/.*)?$\z/ix
+  has_attached_file :picture, :styles => { :medium => "640x480>" }
 
   validates_attachment :picture, :presence => true,
   :content_type => { :content_type => ["image/jpeg", "image/jpg", "image/png"] }
+
+  VALID_URL_REGEX = /\A^(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(([0-9]{1,5})?\/.*)?$\z/ix
 
   validates :name, presence: true
   validates :description, :length => {
