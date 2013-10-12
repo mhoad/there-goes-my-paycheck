@@ -25,3 +25,6 @@ public/system/
 
 #Ignore environment variables config file
 /config/application.yml
+
+#Ignore brakeman output files
+brakeman_output.html
