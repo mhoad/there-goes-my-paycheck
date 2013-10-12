@@ -11,6 +11,8 @@
 #  slug        :string(255)
 #
 
+include ApplicationHelper
+
 class Category < ActiveRecord::Base
   extend FriendlyId
   friendly_id :name, use: :slugged
@@ -27,4 +29,5 @@ class Category < ActiveRecord::Base
     :tokenizer => lambda { |str| str.scan(/\w+/) },
     :too_short => "must have at least %{count} words"
   } # 50 word count minimum description
+
 end

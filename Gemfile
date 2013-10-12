@@ -43,11 +43,6 @@ gem "paperclip", "~> 3.5.1"
 gem "addressable", "~> 2.3.5"
 gem 'meta-tags', '1.5.0', require: 'meta_tags'
 
-
-
-
-
-
 group :doc do
   gem 'sdoc', '0.3.20', require: false
 end

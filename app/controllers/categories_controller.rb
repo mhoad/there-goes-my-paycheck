@@ -1,5 +1,6 @@
 class CategoriesController < ApplicationController
   include ApplicationHelper
+  include CategoriesHelper
 
   before_action :require_login, except:[:show, :index]
   before_action :set_category, only: [:show, :edit, :update, :destroy]
@@ -8,23 +9,7 @@ class CategoriesController < ApplicationController
     @categories = @category.subcategories # Grab all sub-categories
     @products = @category.products.paginate(:page => params[:page],
                                             :per_page => 30)
-    #Set the default metadata for category pages
-    set_meta_tags :title => title_tag(@category),
-                  :description => @category.description[0..160],
-                  :og => {
-                    :title        => "#{@category.name} Gifts and Products",
-                    :type         => 'article',
-                    :url          => canonical_url,
-                    :description  => @category.description,
-                    },
-                  :twitter => {
-                    :card         => 'summary',
-                    :site         => ENV["TWITTER_SITE"],
-                    :creator      => ENV["TWITTER_CREATOR"]
-                  }
-    #Set the appropriate pagination values for search engines if required             
-    set_meta_tags :next => @products.next_page if @products.next_page
-    set_meta_tags :prev => @products.previous_page if @products.previous_page
+    set_metadata(@category, @products)
   end
 
   def new
@@ -74,10 +59,5 @@ class CategoriesController < ApplicationController
     def set_category
       #@category = Category.find(params[:id])
       @category = Category.friendly.find(params[:id])
-    end
-
-    def title_tag(category) 
-      return category.name if category.parent_category.nil?
-      return "#{category.name} - #{category.parent_category.name}"
     end
 end

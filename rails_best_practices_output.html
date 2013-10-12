@@ -57,13 +57,31 @@
       to see more useful Rails Best Practices.
     </p>
     <p>
-        Found 2 warnings.
+        Found 22 warnings.
     </p>
     <table>
           <tr>
               <td>
                 <input type="checkbox" class="error-type" id="LawOfDemeterReview" value="LawOfDemeterReview"
                 />&nbsp;<label for="LawOfDemeterReview">Law Of Demeter</label>
+              </td>
+              <td>
+                <input type="checkbox" class="error-type" id="RemoveUnusedMethodsInHelpersReview" value="RemoveUnusedMethodsInHelpersReview"
+                />&nbsp;<label for="RemoveUnusedMethodsInHelpersReview">Remove Unused Methods In Helpers</label>
+              </td>
+              <td>
+                <input type="checkbox" class="error-type" id="RemoveTrailingWhitespaceCheck" value="RemoveTrailingWhitespaceCheck"
+                />&nbsp;<label for="RemoveTrailingWhitespaceCheck">Remove Trailing Whitespace</label>
+              </td>
+          </tr>
+          <tr>
+              <td>
+                <input type="checkbox" class="error-type" id="MoveModelLogicIntoModelReview" value="MoveModelLogicIntoModelReview"
+                />&nbsp;<label for="MoveModelLogicIntoModelReview">Move Model Logic Into Model</label>
+              </td>
+              <td>
+                <input type="checkbox" class="error-type" id="UseTurboSprocketsRails3Review" value="UseTurboSprocketsRails3Review"
+                />&nbsp;<label for="UseTurboSprocketsRails3Review">Use Turbo Sprockets Rails3</label>
               </td>
           </tr>
         <tr>
@@ -84,9 +102,36 @@
       <tbody>
           <tr class="LawOfDemeterReview">
             <td class='filename'>
+                app/helpers/products_helper.rb
+            </td>
+            <td class='line'>5</td>
+            <td class='message'>
+              <a href='http://rails-bestpractices.com/posts/15-the-law-of-demeter' target='_blank'>law of demeter</a>
+            </td>
+          </tr>
+          <tr class="LawOfDemeterReview">
+            <td class='filename'>
+                app/controllers/categories_controller.rb
+            </td>
+            <td class='line'>82</td>
+            <td class='message'>
+              <a href='http://rails-bestpractices.com/posts/15-the-law-of-demeter' target='_blank'>law of demeter</a>
+            </td>
+          </tr>
+          <tr class="LawOfDemeterReview">
+            <td class='filename'>
                 app/views/categories/show.html.erb
             </td>
-            <td class='line'>40</td>
+            <td class='line'>39</td>
+            <td class='message'>
+              <a href='http://rails-bestpractices.com/posts/15-the-law-of-demeter' target='_blank'>law of demeter</a>
+            </td>
+          </tr>
+          <tr class="LawOfDemeterReview">
+            <td class='filename'>
+                app/views/categories/show.html.erb
+            </td>
+            <td class='line'>78</td>
             <td class='message'>
               <a href='http://rails-bestpractices.com/posts/15-the-law-of-demeter' target='_blank'>law of demeter</a>
             </td>
@@ -95,9 +140,162 @@
             <td class='filename'>
                 app/views/products/show.html.erb
             </td>
-            <td class='line'>11</td>
+            <td class='line'>10</td>
             <td class='message'>
               <a href='http://rails-bestpractices.com/posts/15-the-law-of-demeter' target='_blank'>law of demeter</a>
+            </td>
+          </tr>
+          <tr class="LawOfDemeterReview">
+            <td class='filename'>
+                app/views/products/show.html.erb
+            </td>
+            <td class='line'>69</td>
+            <td class='message'>
+              <a href='http://rails-bestpractices.com/posts/15-the-law-of-demeter' target='_blank'>law of demeter</a>
+            </td>
+          </tr>
+          <tr class="LawOfDemeterReview">
+            <td class='filename'>
+                app/views/static_pages/index.html.erb
+            </td>
+            <td class='line'>33</td>
+            <td class='message'>
+              <a href='http://rails-bestpractices.com/posts/15-the-law-of-demeter' target='_blank'>law of demeter</a>
+            </td>
+          </tr>
+          <tr class="MoveModelLogicIntoModelReview">
+            <td class='filename'>
+                app/controllers/categories_controller.rb
+            </td>
+            <td class='line'>7</td>
+            <td class='message'>
+              <a href='http://rails-bestpractices.com/posts/7-move-model-logic-into-the-model' target='_blank'>move model logic into model (@category use_count > 4)</a>
+            </td>
+          </tr>
+          <tr class="MoveModelLogicIntoModelReview">
+            <td class='filename'>
+                app/controllers/categories_controller.rb
+            </td>
+            <td class='line'>7</td>
+            <td class='message'>
+              <a href='http://rails-bestpractices.com/posts/7-move-model-logic-into-the-model' target='_blank'>move model logic into model (@products use_count > 4)</a>
+            </td>
+          </tr>
+          <tr class="MoveModelLogicIntoModelReview">
+            <td class='filename'>
+                app/controllers/static_pages_controller.rb
+            </td>
+            <td class='line'>2</td>
+            <td class='message'>
+              <a href='http://rails-bestpractices.com/posts/7-move-model-logic-into-the-model' target='_blank'>move model logic into model (@products use_count > 4)</a>
+            </td>
+          </tr>
+          <tr class="RemoveUnusedMethodsInHelpersReview">
+            <td class='filename'>
+                app/helpers/application_helper.rb
+            </td>
+            <td class='line'>20</td>
+            <td class='message'>
+              <a href='' target='_blank'>remove unused methods (ApplicationHelper#analytics_url)</a>
+            </td>
+          </tr>
+          <tr class="RemoveUnusedMethodsInHelpersReview">
+            <td class='filename'>
+                app/helpers/product_pagination_helper.rb
+            </td>
+            <td class='line'>5</td>
+            <td class='message'>
+              <a href='' target='_blank'>remove unused methods (ProductPaginationHelper#page_number)</a>
+            </td>
+          </tr>
+          <tr class="RemoveUnusedMethodsInHelpersReview">
+            <td class='filename'>
+                app/helpers/product_pagination_helper.rb
+            </td>
+            <td class='line'>13</td>
+            <td class='message'>
+              <a href='' target='_blank'>remove unused methods (ProductPaginationHelper#gap)</a>
+            </td>
+          </tr>
+          <tr class="RemoveUnusedMethodsInHelpersReview">
+            <td class='filename'>
+                app/helpers/product_pagination_helper.rb
+            </td>
+            <td class='line'>18</td>
+            <td class='message'>
+              <a href='' target='_blank'>remove unused methods (ProductPaginationHelper#next_page)</a>
+            </td>
+          </tr>
+          <tr class="RemoveUnusedMethodsInHelpersReview">
+            <td class='filename'>
+                app/helpers/product_pagination_helper.rb
+            </td>
+            <td class='line'>31</td>
+            <td class='message'>
+              <a href='' target='_blank'>remove unused methods (ProductPaginationHelper#html_container)</a>
+            </td>
+          </tr>
+          <tr class="UseTurboSprocketsRails3Review">
+            <td class='filename'>
+                Capfile
+            </td>
+            <td class='line'>3</td>
+            <td class='message'>
+              <a href='http://rails-bestpractices.com/posts/704-speed-up-assets-precompile-with-turbo-sprockets-rails3' target='_blank'>speed up assets precompile with turbo-sprockets-rails3</a>
+            </td>
+          </tr>
+          <tr class="RemoveTrailingWhitespaceCheck">
+            <td class='filename'>
+                app/helpers/application_helper.rb
+            </td>
+            <td class='line'>20</td>
+            <td class='message'>
+              <a href='http://rails-bestpractices.com/posts/60-remove-trailing-whitespace' target='_blank'>remove trailing whitespace</a>
+            </td>
+          </tr>
+          <tr class="RemoveTrailingWhitespaceCheck">
+            <td class='filename'>
+                app/controllers/categories_controller.rb
+            </td>
+            <td class='line'>26</td>
+            <td class='message'>
+              <a href='http://rails-bestpractices.com/posts/60-remove-trailing-whitespace' target='_blank'>remove trailing whitespace</a>
+            </td>
+          </tr>
+          <tr class="RemoveTrailingWhitespaceCheck">
+            <td class='filename'>
+                app/controllers/static_pages_controller.rb
+            </td>
+            <td class='line'>8</td>
+            <td class='message'>
+              <a href='http://rails-bestpractices.com/posts/60-remove-trailing-whitespace' target='_blank'>remove trailing whitespace</a>
+            </td>
+          </tr>
+          <tr class="RemoveTrailingWhitespaceCheck">
+            <td class='filename'>
+                config/deploy.rb
+            </td>
+            <td class='line'>6</td>
+            <td class='message'>
+              <a href='http://rails-bestpractices.com/posts/60-remove-trailing-whitespace' target='_blank'>remove trailing whitespace</a>
+            </td>
+          </tr>
+          <tr class="RemoveTrailingWhitespaceCheck">
+            <td class='filename'>
+                app/views/layouts/application.html.erb
+            </td>
+            <td class='line'>16</td>
+            <td class='message'>
+              <a href='http://rails-bestpractices.com/posts/60-remove-trailing-whitespace' target='_blank'>remove trailing whitespace</a>
+            </td>
+          </tr>
+          <tr class="RemoveTrailingWhitespaceCheck">
+            <td class='filename'>
+                app/views/products/show.html.erb
+            </td>
+            <td class='line'>80</td>
+            <td class='message'>
+              <a href='http://rails-bestpractices.com/posts/60-remove-trailing-whitespace' target='_blank'>remove trailing whitespace</a>
             </td>
           </tr>
       </tbody>
