@@ -18,12 +18,10 @@ feature 'Social Metadata' do
   scenario "page contains Twitter cards metadata" do
     visit category_product_path(category, product)
 
-    page.should have_css 'meta[name="twitter:site"]',         :visible => false
-    page.should have_css 'meta[name="twitter:creator"]',      :visible => false
-    page.should have_css 'meta[name="twitter:card"]',         :visible => false
-    page.should have_css 'meta[name="twitter:title"]',        :visible => false
-    page.should have_css 'meta[name="twitter:description"]',  :visible => false
-    page.should have_css 'meta[name="twitter:image"]',        :visible => false
+    page.should have_css 'meta[property="twitter:site"]',         :visible => false
+    page.should have_css 'meta[property="twitter:creator"]',      :visible => false
+    page.should have_css 'meta[property="twitter:card"]',         :visible => false
+    
   end
 end
 
