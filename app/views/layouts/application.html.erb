@@ -6,7 +6,8 @@
   <link rel="dns-prefetch" href="//themes.googleusercontent.com">
   <link rel="dns-prefetch" href="//apis.google.com">
   <link rel="dns-prefetch" href="//static.ak.facebook.com">
-  <%= display_meta_tags :site => 'My website' %>
+  <meta property="fb:app_id" content="<%= ENV["FACEBOOK_APP_ID"] %>">
+  <%= display_meta_tags :site => 'Geek Gifts', :reverse => true %>
   <link rel="canonical" href="<%= canonical_url %>">
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">

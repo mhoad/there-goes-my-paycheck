@@ -1,8 +1,18 @@
-<% twitter_cards(title: @product.name, description: @product.description,
-                 image: @product.picture.url) %>
-<% open_graph_tags(title: @product.name, type: "article",
-                   image: @product.picture.url, url: @product.url,
-                   description: @product.description) %>
+
+<% set_meta_tags :og => {
+    :title        => @product.name,
+    :type         => 'article',
+    :url          => @product.url,
+    :description  => @product.description,
+    :image        => @product.picture.url
+  },
+  :twitter => {
+    :card         => 'summary',
+    :site         => ENV["TWITTER_SITE"],
+    :creator      => ENV["TWITTER_CREATOR"]
+  }
+%>
+
 <!-- Start contain -->
   <section id="contain">
     <div class="container">

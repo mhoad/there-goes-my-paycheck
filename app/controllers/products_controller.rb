@@ -22,6 +22,8 @@ class ProductsController < ApplicationController
   end
 
   def show
+    set_meta_tags :title => "#{@product.category.name}: #{@product.name}",
+                  :description => @product.description[0..160]
   end
 
   def edit
