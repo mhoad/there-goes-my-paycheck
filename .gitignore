@@ -28,3 +28,9 @@ public/system/
 
 #Ignore brakeman output files
 brakeman_output.html
+
+#Ignore images from products
+/public/system/products*.png
+/public/system/products*.gif
+/public/system/products*.jpg
+/public/system/products*.jpeg

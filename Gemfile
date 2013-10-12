@@ -17,6 +17,7 @@ group :development do
   gem 'binding_of_caller'
   gem 'annotate', '>=2.5.0'
   gem 'rails_best_practices'
+  gem 'brakeman', :require => false
 end
 
 group :test do
