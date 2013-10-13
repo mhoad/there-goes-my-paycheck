@@ -4,7 +4,8 @@ class StaticPagesController < ApplicationController
                                             :per_page => 30)
     @categories = Category.all
     set_meta_tags :title => 'Unique Gifts and Products',
-                  :description => 'Write some awesome description here'
+                  :description => 'We spend hours every day trawling the internet for the most
+                                  ridiculous, absurd, and amazing gifts and products. Check them all out here.'
 
     #Set the appropriate pagination values for search engines if required
     set_meta_tags :next => @products.next_page if @products.next_page
@@ -13,17 +14,23 @@ class StaticPagesController < ApplicationController
 
   def about
     set_meta_tags :title => 'About Us',
-                  :description => 'Write some awesome description here'
+                  :description => 'This page is for all you creepy stalker types who want to know
+                                   a bit more about the people behind the site.',
+                  :noindex => true
   end
 
   def submit
     set_meta_tags :title => 'Submit a Product',
-                  :description => 'Write some awesome description here'
+                  :description => 'Get your product featured in front of thousands of people. 
+                                  If you have something cool to share let us know here.',
+                  :noindex => true
   end
 
   def privacy
     set_meta_tags :title => 'Privacy Policy',
-                  :description => 'Write some awesome description here'
+                  :description => 'Show the world just how few fucks you give by spending your spare time
+                                   reading a companies online privacy policy. ',
+                  :noindex => true
   end
 
   def facebook_channel
