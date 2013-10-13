@@ -12,7 +12,8 @@ class ProductsController < ApplicationController
   end
 
   def create
-    @product = @category.products.build(product_params)
+    #@product = @category.products.build(product_params)
+    @product = @category.products.new(product_params)
     if @product.save
       flash[:success] = "Product successfully created"
       redirect_to [@category, @product]
