@@ -24,3 +24,12 @@ function google_user (status) {
  };
  ga('set', 'dimension4', google_status);
 }
+
+function facebook_user (status) {
+ if (status) {
+  var facebook_status = 'Logged In';
+ } else {
+  var facebook_status = 'Not Logged In';
+ };
+ ga('set', 'dimension4', facebook_status);
+}
