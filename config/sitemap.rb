@@ -1,5 +1,5 @@
 # Set the host name for URL creation
-SitemapGenerator::Sitemap.default_host = "http://giftgeek.io"
+SitemapGenerator::Sitemap.default_host = "http://fmhgifts.com"
 # Set the path for this sitemap
 SitemapGenerator::Sitemap.create do
   add about_path,   :priority => 0.3, :changefreq => 'monthly'

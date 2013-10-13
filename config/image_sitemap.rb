@@ -1,5 +1,5 @@
 # Set the host name for URL creation
-SitemapGenerator::Sitemap.default_host = "http://giftgeek.io"
+SitemapGenerator::Sitemap.default_host = "http://fmhgifts.com"
 SitemapGenerator::Sitemap.create do
   group(:filename => :standard_images) do
     Product.find_each do |product|
