@@ -4,7 +4,7 @@ describe 'StaticPages' do
   describe 'Homepage' do
     it 'should have the correct content' do
       visit root_path
-      expect(page).to have_content('Geek Gifts')
+      expect(page).to have_content('FMH Gifts')
     end
   end
 

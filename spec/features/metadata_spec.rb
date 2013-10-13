@@ -9,7 +9,7 @@ feature 'Metadata' do
   scenario "page contains Facebook open graph data" do
     visit category_product_path(category, product)
     
-    page.should have_css 'meta[property="fb:app_id"]',        :visible => false
+    page.should have_css 'meta[property="fb:admins"]',        :visible => false
     page.should have_css 'meta[property="og:title"]',         :visible => false
     page.should have_css 'meta[property="og:type"]',          :visible => false
     page.should have_css 'meta[property="og:image"]',         :visible => false
