@@ -81,7 +81,8 @@ Paycheck::Application.configure do
 
   #Paperclip settings for uploading to S3 in production
   config.paperclip_defaults = {
-    :url => ':s3_domain_url',
+    :url => ':s3_alias_url',
+    :s3_host_alias => 'cdn.fmhgifts.com',
     :path => "images/:category_name/:style/:basename.:extension",
     :storage => :s3,
     :bucket => ENV['S3_BUCKET_NAME'],
