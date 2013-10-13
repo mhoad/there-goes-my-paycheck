@@ -12,8 +12,8 @@ class ProductsController < ApplicationController
   end
 
   def create
-    #@product = @category.products.build(product_params)
-    @product = @category.products.new(product_params)
+    @product = @category.products.build(product_params)
+    #@product = @category.products.new(product_params)
     if @product.save
       flash[:success] = "Product successfully created"
       redirect_to [@category, @product]
@@ -52,13 +52,10 @@ class ProductsController < ApplicationController
     # can specialize this method with per-user checking of permissible attributes.
     def product_params
       params.require(:product).permit(:name, :description, :url, :category_id, :picture, 
-                                      :price, :social_image, :social_image_file_name,
-                                      :social_image_content_type, :social_image_file_size,
-                                      :social_image_updated_at)
+                                      :price, :social_image)
     end
 
     def set_category
-      #2@category = Category.find(params[:category_id])
       @category = Category.friendly.find(params[:category_id])
     end
 
