@@ -2,19 +2,23 @@
 #
 # Table name: products
 #
-#  id                   :integer          not null, primary key
-#  name                 :string(255)
-#  description          :text
-#  url                  :string(255)
-#  created_at           :datetime
-#  updated_at           :datetime
-#  category_id          :integer
-#  slug                 :string(255)
-#  picture_file_name    :string(255)
-#  picture_content_type :string(255)
-#  picture_file_size    :integer
-#  picture_updated_at   :datetime
-#  price                :decimal(, )
+#  id                        :integer          not null, primary key
+#  name                      :string(255)
+#  description               :text
+#  url                       :string(255)
+#  created_at                :datetime
+#  updated_at                :datetime
+#  category_id               :integer
+#  slug                      :string(255)
+#  picture_file_name         :string(255)
+#  picture_content_type      :string(255)
+#  picture_file_size         :integer
+#  picture_updated_at        :datetime
+#  price                     :decimal(, )
+#  social_image_file_name    :string(255)
+#  social_image_content_type :string(255)
+#  social_image_file_size    :integer
+#  social_image_updated_at   :datetime
 #
 
 require 'spec_helper'
