@@ -52,7 +52,9 @@ class ProductsController < ApplicationController
     # can specialize this method with per-user checking of permissible attributes.
     def product_params
       params.require(:product).permit(:name, :description, :url, :category_id, :picture, 
-                                      :price, :social_image, :social_image_file_name)
+                                      :price, :social_image, :social_image_file_name,
+                                      :social_image_content_type, :social_image_file_size,
+                                      :social_image_updated_at)
     end
 
     def set_category
