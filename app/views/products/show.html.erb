@@ -26,10 +26,25 @@
             <% end %>
             </div>
               <div class="flexslider median-object">
-                <%= image_tag( @product.social_image.url, { :itemprop => "image" }) %>
+                <style type="text/css">
+                  .layover {
+                    position: relative;
+                    margin-top: -69%;
+                    opacity:0.0;
+                    filter:alpha(opacity=0); /* For IE8 and earlier */
+                  }
+                  .layover:hover{
+                    background:rgba(255,255,255,0.4);
+                    opacity:1;
+                  }
+                </style>
+                
+                <%= image_tag( @product.picture.url(:large), { :itemprop => "image" }) %>
+                <%= image_tag( @product.social_image.url, { :class => "layover" }) %>
+                
               </div>
               <div class="post-contain">
-                <div class="fb-like" data-href="<%= canonical_url %>" data-width="450" data-layout="box_count" data-show-faces="false" data-send="false"></div>
+                <div class="fb-like" data-href="<%= canonical_url %>" data-width="450" data-layout="box_count" data-show-fnewaces="false" data-send="false"></div>
                 <div class="g-plusone" data-size="tall" data-href="<%= canonical_url %>"  ></div>
                 <a href="https://twitter.com/share" class="twitter-share-button" data-lang="en" data-count="vertical" data-related="<%= ENV["TWITTER_SITE"] %>" data-via="<%= ENV["TWITTER_CREATOR"] %>" data-url="<%= canonical_url %>">Tweet</a>
                 <h4>Description :</h4>
@@ -53,7 +68,7 @@
               <%= link_to "Buy Product", @product.url,
                   :class => "btn btn-large btn-block btn-primary", :id => "buy-button", :target => "_blank" %>
               <p><strong><i class="icon-link"></i> Via :</strong>
-                <%= link_to Addressable::URI.parse(@product.url).host, @product.url %>
+                <%= link_to provider_domain(@product.url), @product.url %>
               </p>
 
               <% if ENV["GOOGLE_UNIVERSAL_ANALYTICS_ID"].present? %>

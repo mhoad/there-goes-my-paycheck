@@ -43,6 +43,7 @@
       ],
       "/Users/Mark/Code/rails/there-goes-my-paycheck/app/helpers/application_helper.rb": [
         1,
+        1,
         null,
         1,
         30,
@@ -59,6 +60,10 @@
         null,
         1,
         1007,
+        null,
+        null,
+        1,
+        28,
         null,
         null,
         null,
@@ -137,7 +142,6 @@
         null
       ],
       "/Users/Mark/Code/rails/there-goes-my-paycheck/app/helpers/products_helper.rb": [
-        1,
         1,
         null,
         1,
@@ -427,6 +431,6 @@
         null
       ]
     },
-    "timestamp": 1381683312
+    "timestamp": 1381735218
   }
 }

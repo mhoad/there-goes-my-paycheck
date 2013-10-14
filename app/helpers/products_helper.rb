@@ -1,5 +1,4 @@
 module ProductsHelper
-  require 'addressable/uri'
 
   def metadata(product)
     set_meta_tags :title => "#{product.category.name}: #{product.name}",

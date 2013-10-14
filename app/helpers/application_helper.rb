@@ -1,4 +1,5 @@
 module ApplicationHelper
+  require 'addressable/uri'
 
   def require_login
     unless user_signed_in? && current_user.admin?
@@ -15,6 +16,10 @@ module ApplicationHelper
 
   def canonical_url
     url_for(:page => params[:page], :only_path => false)
+  end
+
+  def provider_domain(url)
+    Addressable::URI.parse(url).host
   end
 
   # def analytics_url(source: nil, medium: nil, term: nil,

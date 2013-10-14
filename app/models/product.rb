@@ -27,7 +27,7 @@ class Product < ActiveRecord::Base
 
   belongs_to :category
 
-  has_attached_file :picture, :styles => { :medium => "640x480>" }
+  has_attached_file :picture, :styles => { :medium => "640x480>", :large => "1024x680>" }
   has_attached_file :social_image
 
   validates_attachment :picture, :presence => true,
