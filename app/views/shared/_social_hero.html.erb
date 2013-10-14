@@ -3,8 +3,15 @@
   <div class="container">
     <div class="row">
     <div class="span12 aligncenter">
+      <script type="text/javascript">
+        function plusone_callback (gdata) {
+          if (gdata.state === "on") {
+            ga('send', 'event', 'social', 'plus 1', 'google plus')
+          };
+        }
+      </script>
       <div class="fb-like" data-href="<%= url_for :controller => 'static_pages', :action => 'index', :only_path => false %>" data-width="450" data-layout="box_count" data-show-faces="false" data-send="false"></div>
-      <div class="g-plusone" data-size="tall" data-href="<%= canonical_url %>"  ></div>
+      <div class="g-plusone" data-size="tall" data-href="<%= url_for :controller => 'static_pages', :action => 'index', :only_path => false %>" data-callback="plusone_callback" ></div>
       <a href="https://twitter.com/share" class="twitter-share-button" data-lang="en" data-count="vertical" data-related="<%= ENV["TWITTER_SITE"] %>" data-via="<%= ENV["TWITTER_CREATOR"] %>" data-url="<%= canonical_url %>">Tweet</a>
       <p>
       <%= get_social_tagline %>

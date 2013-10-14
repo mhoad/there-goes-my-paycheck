@@ -19,6 +19,7 @@
                 'socialTarget': '<%= canonical_url %>',
                 'page': '<%= request.original_fullpath %>'
                 });
+      ga('send', 'event', 'social', 'like', 'facebook');
       });
 
     //Unlikes the page
@@ -41,6 +42,7 @@
                 'socialTarget': '<%= canonical_url %>',
                 'page': '<%= request.original_fullpath %>'
                 });
+      ga('send', 'event', 'social', 'comment', 'facebook');
     });
 
     //Deletes a comment on the page
@@ -63,6 +65,7 @@
                 'socialTarget': '<%= canonical_url %>',
                 'page': '<%= request.original_fullpath %>'
                 });
+      ga('send', 'event', 'social', 'share', 'facebook');
     });
 
     FB.getLoginStatus(function(response) {

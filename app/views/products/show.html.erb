@@ -79,7 +79,7 @@
                       // Set goal using jQuery onclick event.
                       if( window.$ ) {
                           $('#buy-button').on('click', function() {
-                            ga('send', 'event', 'thumbnail', 'external click', {
+                            ga('send', 'event', 'buy-button', 'external click', {
                               'dimension1': '<%= @product.name %>',
                               'dimension2': '<%= @product.category.name %>' });
                           });
