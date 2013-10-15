@@ -6,7 +6,7 @@ module ProductsHelper
                   :og => {
                     :title        => product.name,
                     :type         => 'article',
-                    :url          => product.url,
+                    :url          => canonical_url,
                     :description  => product.description,
                     :image        => URI.join(request.url, product.picture.url)
                     },
