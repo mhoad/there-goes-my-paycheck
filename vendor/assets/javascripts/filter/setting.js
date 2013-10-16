@@ -1,5 +1,5 @@
-jQuery(document).ready(function(){
-
+//jQuery(document).ready(function(){
+ $(window).load(function(){
 	jQuery('#portfolio').isotope({
 	  // options
 	  itemSelector : '.item',
