@@ -8,7 +8,7 @@ class CategoriesController < ApplicationController
   def show
     @categories = @category.subcategories # Grab all sub-categories
     @products = @category.products.paginate(:page => params[:page],
-                                            :per_page => 30)
+                                            :per_page => 15)
     set_metadata(@category, @products)
   end
 
