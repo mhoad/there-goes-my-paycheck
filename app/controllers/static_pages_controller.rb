@@ -8,8 +8,8 @@ class StaticPagesController < ApplicationController
                                   ridiculous, absurd, and amazing gifts and products. Check them all out here.'
 
     #Set the appropriate pagination values for search engines if required
-    set_meta_tags :next => "#{canonical_url}{@products.next_page}" if @products.next_page
-    set_meta_tags :prev => "#{canonical_url}{@products.previous_page}" if @products.previous_page
+    set_meta_tags :next => "#{canonical_url}#{@products.next_page}" if @products.next_page
+    set_meta_tags :prev => "#{canonical_url}#{@products.previous_page}" if @products.previous_page
   end
 
   def about
