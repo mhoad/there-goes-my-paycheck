@@ -14,7 +14,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,700,300' rel='stylesheet' type='text/css'>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true, :async => true %>
   <%= csrf_meta_tags %>
   <!--[if lt IE 9]>
     <link rel="stylesheet" type="text/css" href="css/fallback.css" />
@@ -22,6 +21,7 @@
   <![endif]-->
   <%= render "shared/universal_analytics" %>
   <%= jquery_include_tag Rails.application.config.jquery_version %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true, :async => true %>
 </head>
 <body itemscope itemtype="http://schema.org/WebPage">
 
