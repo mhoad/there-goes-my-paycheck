@@ -12,6 +12,8 @@
  *= require bootstrap
  *= require bootstrap-responsive
  *= require overwrite
+ *= require font-awesome
+ *= require icon-set
  *= require style
  *= require skin
  *= require_tree .
