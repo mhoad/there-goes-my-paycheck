@@ -40,7 +40,7 @@
                 </style>
                 
                 <%= image_tag( @product.picture.url(:large), { :itemprop => "image" }) %>
-                <%= image_tag( @product.social_image.url, { :class => "layover" }) %>
+                <%= image_tag( @product.social_image.url(:large), { :class => "layover" }) %>
                 
               </div>
               <div class="post-contain">

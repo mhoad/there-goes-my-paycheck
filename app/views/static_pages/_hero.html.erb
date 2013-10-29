@@ -18,7 +18,7 @@
             <% random_product = Product.limit(1).offset(offset) %>
               <li><a href="#">
                 <% if !random_product.first.nil? %>
-                  <%= image_tag(random_product.first.picture(:medium)) %>
+                  <%= image_tag(random_product.first.picture(:thumbnail)) %>
                 <% else %>
                   <img src="http://placehold.it/1024x680.jpg" alt="" >
                 <% end %>

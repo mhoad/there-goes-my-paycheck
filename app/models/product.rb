@@ -27,8 +27,11 @@ class Product < ActiveRecord::Base
 
   belongs_to :category
 
-  has_attached_file :picture, :styles => { :medium => "640x480>", :large => "1024x680>" }
-  has_attached_file :social_image
+  has_attached_file :picture, :styles => { :thumbnail => "128x128>",
+                                           :small => "270x179>",
+                                           :medium => "370x245>",
+                                           :large => "842x581>" }
+  has_attached_file :social_image, :styles => { :large => "842x581>" }
 
   validates_attachment :picture, :presence => true,
   :content_type => { :content_type => ["image/jpeg", "image/jpg", "image/png"] }
