@@ -21,7 +21,7 @@
   <![endif]-->
   <%= render "shared/universal_analytics" %>
   <%= jquery_include_tag Rails.application.config.jquery_version %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true, :async => true %>
+
 </head>
 <body itemscope itemtype="http://schema.org/WebPage">
 
@@ -29,8 +29,8 @@
   <%= render "shared/header", :top_level_categories => @top_level_categories %>
   <%= yield %>
   <%= render "shared/footer" %>
-  <%= jquery_include_tag Rails.application.config.jquery_version %>
   
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true, :async => true %>
   <%= render "shared/facebook_sdk" %>
   <%= render "shared/google_plus_sdk" %>
   </body>
