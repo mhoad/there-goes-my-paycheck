@@ -28,6 +28,10 @@ group :test do
   gem 'launchy', '~> 2.3.0'
 end
 
+group :assets do
+  gem 'asset_sync'
+end
+
 gem 'sass-rails', '~> 4.0.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
