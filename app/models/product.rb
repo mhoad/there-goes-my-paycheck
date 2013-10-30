@@ -32,11 +32,13 @@ class Product < ActiveRecord::Base
                                  :small => "270x179>",
                                  :medium => "370x245>",
                                  :large => "842x581>" },
-                    :s3_headers => {'Expires' => 1.year.from_now.httpdate}
+                    :s3_headers => {'Cache-Control' => 'max-age=31557600',
+                                    'Expires' => 1.year.from_now.httpdate}
 
   has_attached_file :social_image, 
                     :styles => { :large => "842x581>" },
-                    :s3_headers => {'Expires' => 1.year.from_now.httpdate}
+                    :s3_headers => {'Cache-Control' => 'max-age=31557600',
+                                    'Expires' => 1.year.from_now.httpdate}
 
   validates_attachment :picture, :presence => true,
   :content_type => { :content_type => ["image/jpeg", "image/jpg", "image/png"] }
