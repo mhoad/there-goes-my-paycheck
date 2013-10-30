@@ -1,3 +1,5 @@
+require 'will_paginate/array' 
+
 class CategoriesController < ApplicationController
   include ApplicationHelper
   include CategoriesHelper
@@ -7,8 +9,9 @@ class CategoriesController < ApplicationController
 
   def show
     @categories = @category.subcategories # Grab all sub-categories
-    @products = @category.products.paginate(:page => params[:page],
-                                            :per_page => 15)
+    @products = @category.products.order("created_at DESC").paginate(
+                                                :page => params[:page],
+                                                :per_page => 15)
     set_metadata(@category, @products)
   end
 

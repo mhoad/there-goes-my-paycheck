@@ -1,7 +1,10 @@
+require 'will_paginate/array' 
+
 class StaticPagesController < ApplicationController
   def index
-    @products = Product.all.paginate(:page => params[:page],
-                                            :per_page => 15)
+    #sorted_products = Product.order("created_at DESC")
+    @products = Product.order("created_at DESC").paginate(:page => params[:page],
+                                                          :per_page => 15)
     @categories = Category.all
     set_meta_tags :title => 'Unique Gifts and Products',
                   :description => 'We spend hours every day trawling the internet for the most
