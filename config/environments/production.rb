@@ -91,7 +91,7 @@ Paycheck::Application.configure do
   
   config.paperclip_defaults = {
     :url => ':s3_alias_url',
-    :s3_host_alias => 'cdn.fmhgifts.com',
+    :s3_host_alias => Proc.new { |source| "cdn#{rand(4)}.fmhgifts.com" },
     :path => "images/:category_name/:style/:basename.:extension",
     :storage => :s3,
     :bucket => ENV['S3_BUCKET_NAME'],
