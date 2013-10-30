@@ -20,9 +20,9 @@ Paycheck::Application.configure do
   # config.action_dispatch.rack_cache = true
 
   #Settings for AWS / Cloudfront
-  config.assets.enabled = true
-  config.action_controller.asset_host = "http://cdn%d.fmhgifts.com"
-  config.assets.initialize_on_precompile = true
+  #config.assets.enabled = true
+  #config.action_controller.asset_host = "http://cdn%d.fmhgifts.com"
+  #config.assets.initialize_on_precompile = true
 
   # Disable Rails's static asset server (Apache or nginx will already do this).
   config.serve_static_assets = false
