@@ -85,9 +85,13 @@ Paycheck::Application.configure do
   config.log_formatter = ::Logger::Formatter.new
 
   #Paperclip settings for uploading to S3 in production
+
+  #:s3_host_name => 'geekgifts.s3.amazonaws.com',
+  #:url => ":asset_host",
+  
   config.paperclip_defaults = {
-    :url => ":asset_host", #:url => ':s3_alias_url',
-    :s3_host_name => 'geekgifts.s3.amazonaws.com', #:s3_host_alias => 'cdn.fmhgifts.com',
+    :url => ':s3_alias_url',
+    :s3_host_alias => 'cdn.fmhgifts.com',
     :path => "images/:category_name/:style/:basename.:extension",
     :storage => :s3,
     :bucket => ENV['S3_BUCKET_NAME'],
