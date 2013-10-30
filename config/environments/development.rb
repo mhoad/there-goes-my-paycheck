@@ -29,6 +29,11 @@ Paycheck::Application.configure do
   #config.assets.compress = true
   config.assets.debug = true
 
+  #Settings for AWS / Cloudfront
+  config.assets.enabled = true
+  config.action_controller.asset_host = "http://geekgifts-dev.s3.amazonaws.com/"
+  config.assets.initialize_on_precompile = true
+
 
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
 
